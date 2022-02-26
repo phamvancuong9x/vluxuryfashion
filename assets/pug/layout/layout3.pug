@@ -1,0 +1,29 @@
+block mixins
+	include ../blocks/mixins
+block vars
+	-title = 'VLUXURY - Thời trang nam'
+	-bodyClass = ''
+	-linkCss=""
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		title=title
+		meta(name="description", content="")
+		meta(name="keywords", content="")
+		meta(name="robots", content="index, follow")
+		meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1.0")
+		link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js' integrity='sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==' crossorigin='anonymous' referrerpolicy='no-referrer')
+		link(rel='stylesheet' type='text/css' href='//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css')
+		link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC' crossorigin='anonymous')
+		link(href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css' rel='stylesheet')
+		link(rel='stylesheet' href='assets/themify-icons/themify-icons.css')
+		link(rel='shortcut icon' href='assets/image/image_home/logo1.png' type='image/x-icon')
+		link(rel='stylesheet' href=linkCss)
+	body(class=bodyClass)
+		.main 
+			block content
+		block layer
+		include ../blocks/scripts
+		script(src=linkScripts)

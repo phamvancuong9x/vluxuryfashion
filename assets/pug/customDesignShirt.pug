@@ -1,0 +1,117 @@
+
+extends layout/layout2
+include blocks/mixins
+block vars
+	-title = 'Thiết kế riêng - VLUXURY '
+	-bodyClass = 'home-page'
+	-linkCss='assets/css/customDesignShirt.css'
+	-linkScripts='assets/javascript/customDesignShirt.js'
+block breadcrumbs
+	+breadcrumbs('THIẾT KẾ ÁO SƠ MI CỦA RIÊNG BẠN',' Thiết kế riêng')
+block content
+	.container
+		.row
+			.col-12.col-md-6
+				#product__image 
+			.col-12.col-md-6
+				#content-create 
+					.create__title Thiết kế áo sơ mi riêng của bạn
+					.create__describe Chọn từ một loạt các hai lớp vải cotton Ai Cập tốt nhất và chọn tất cả các chi tiết hoàn thiện.
+					.select-container
+						.select-fabric
+							h3.select-fabric__title.select__title.iconPlus   
+								i(class="ti-minus")
+								span Chọn vải 
+								span.answer 
+							ul.select-fabric__list.select__list.row
+								li.col-3.select-fabric__item.select-item(data-shirt="shirt-01")
+									+tagImg('assets/image/product_feature/So_mi/vai/shirt-01.jpg','Image-fabric')
+								li.col-3.select-fabric__item.select-item(data-shirt="shirt-02") 
+									+tagImg('assets/image/product_feature/So_mi/vai/shirt-02.jpg','Image-fabric')
+								li.col-3.select-fabric__item.select-item(data-shirt="shirt-03") 
+									+tagImg('assets/image/product_feature/So_mi/vai/shirt-03.jpg','Image-fabric')
+								li.col-3.select-fabric__item.select-item(data-shirt="shirt-04") 
+									+tagImg('assets/image/product_feature/So_mi/vai/shirt-04.jpg','Image-fabric')
+								li.col-3.select-fabric__item.select-item(data-shirt="shirt-05") 
+									+tagImg('assets/image/product_feature/So_mi/vai/shirt-05.jpg','Image-fabric')
+								li.col-3.select-fabric__item.select-item(data-shirt="shirt-06") 
+									+tagImg('assets/image/product_feature/So_mi/vai/shirt-06.jpg','Image-fabric')
+								li.col-3.select-fabric__item.select-item(data-shirt="shirt-07") 
+									+tagImg('assets/image/product_feature/So_mi/vai/shirt-07.jpg','Image-fabric')
+								li.col-3.select-fabric__item.select-item(data-shirt="shirt-08") 
+									+tagImg('assets/image/product_feature/So_mi/vai/shirt-08.jpg','Image-fabric')
+								li.col-3.select-fabric__item.select-item(data-shirt="shirt-09") 
+									+tagImg('assets/image/product_feature/So_mi/vai/shirt-09.jpg','Image-fabric')
+								li.col-3.select-fabric__item.select-item(data-shirt="shirt-10") 
+									+tagImg('assets/image/product_feature/So_mi/vai/shirt-10.jpg','Image-fabric')
+								li.col-3.select-fabric__item.select-item(data-shirt="shirt-11") 
+									+tagImg('assets/image/product_feature/So_mi/vai/shirt-11.jpg','Image-fabric')
+								li.col-3.select-fabric__item.select-item(data-shirt="shirt-12") 
+									+tagImg('assets/image/product_feature/So_mi/vai/shirt-12.jpg','Image-fabric')
+								li.col-3.select-fabric__item.select-item(data-shirt="shirt-13") 
+									+tagImg('assets/image/product_feature/So_mi/vai/shirt-13.jpg','Image-fabric')
+								li.col-3.select-fabric__item.select-item(data-shirt="shirt-14") 
+									+tagImg('assets/image/product_feature/So_mi/vai/shirt-14.jpg','Image-fabric')
+								li.col-3.select-fabric__item.select-item(data-shirt="shirt-15") 
+									+tagImg('assets/image/product_feature/So_mi/vai/shirt-15.jpg','Image-fabric')
+						.select-fit
+							h3.select-fit__title.select__title.iconPlus   
+								i(class="ti-minus")
+								span Chọn fit
+								span.answer 
+							ul.select-fit__list.select__list.row
+								li.col-4.select-fit__item.select-item 
+									+tagImg('assets/image/product_feature/So_mi/Fit/fit-1.jpg','Image-fit')
+								li.col-4.select-fit__item.select-item 
+									+tagImg('assets/image/product_feature/So_mi/Fit/fit-2.jpg','Image-fit')
+								li.col-4.select-fit__item.select-item 
+									+tagImg('assets/image/product_feature/So_mi/Fit/fit-3.jpg','Image-fit')
+						.select-collar
+							h3.select-collar__title.select__title.iconPlus      
+								i(class="ti-minus")
+								span Chọn cổ áo
+								span.answer 
+							ul.select-collar__list.select__list.row
+								li.col-3.select-collar__item.select-item 
+									+tagImg('assets/image/product_feature/So_mi/co_ao/collar-1.jpg','Image-collar')
+								li.col-3.select-collar__item.select-item 
+									+tagImg('assets/image/product_feature/So_mi/co_ao/collar-2.jpg','Image-collar')
+								li.col-3.select-collar__item.select-item 
+									+tagImg('assets/image/product_feature/So_mi/co_ao/collar-3.jpg','Image-collar')
+								li.col-3.select-collar__item.select-item 
+									+tagImg('assets/image/product_feature/So_mi/co_ao/collar-4.jpg','Image-collar')
+						.select-cuff
+							h3.select-cuff__title.select__title.iconPlus    
+								i(class="ti-minus")
+								span Chọn cổ tay áo
+								span.answer 
+							ul.select-cuff__list.select__list.row
+								li.col-3.select-cuff__item.select-item 
+									+tagImg('assets/image/product_feature/So_mi/co_tay_ao/1.jpg','Image-cuff')
+								li.col-3.select-cuff__item.select-item 
+									+tagImg('assets/image/product_feature/So_mi/co_tay_ao/2.jpg','Image-cuff')
+								li.col-3.select-cuff__item.select-item 
+									+tagImg('assets/image/product_feature/So_mi/co_tay_ao/3.jpg','Image-cuff')
+						.select-size
+							select(class=size,name="")
+								option(value="Chọn size") Chọn size
+								option(value="39") 39  
+								option(value="40") 40  
+								option(value="41") 41  
+								option(value="41") 41  
+								option(value="42") 42  
+								option(value="L") L  
+								option(value="M") M  
+								option(value="XL") XL  
+								option(value="XS") XS 
+						.price__product 5,950,000đ
+						.detailProduct__btn
+							//- .btn.btn__add-to-cart.add_cart_sever
+							//- 	i(class="fas fa-shopping-cart")
+							//- 	span Thêm vào giỏ
+							a(href="checkout.html").btn.btn__buyProduct.add_cart_sever Mua ngay 
+						.deliveryTime Thời gian giao hàng     4-5 tuần
+block import
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js")
+	script( src="assets/3dEye-master/3deye.js")
+	

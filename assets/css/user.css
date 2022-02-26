@@ -1,0 +1,237 @@
+@import url("base.css");
+
+input {
+}
+.breadcrumb {
+  background-color: rgb(241, 241, 241);
+  padding: 4px 0;
+}
+
+.content {
+  /* background-color: #f5f5f5; */
+  height: 100vh;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+.sidebar-menu {
+  padding-top: 20px;
+  border: 1px solid rgb(233, 232, 232);
+  box-shadow: 0 0 3px 0 #ddd;
+  background-color: #f5f5f5;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+}
+.sidebar-item:first-child {
+  border-bottom: 1px solid #ddd;
+  height: 72px;
+  padding-bottom: 20px;
+}
+
+.sidebar__avatar-image > img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.sidebar__user-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-item {
+  padding-bottom: 10px;
+}
+.sidebar-item:nth-child(2) {
+  padding-top: 10px;
+}
+.sidebar-item > img {
+  display: block;
+  margin-right: 10px;
+  width: 20px;
+}
+/* sidebar__content */
+.my-profile {
+  background-color: #fff;
+  border: 1px solid rgb(233, 232, 232);
+  box-shadow: 0 0 3px 0 #ddd;
+}
+.user__title {
+  padding: 20px 0 20px 20px;
+  border-bottom: 1px solid #ccc;
+}
+.user__main {
+  padding-top: 30px;
+}
+.container-fluid .data-item:first-child {
+  margin-bottom: 0;
+}
+.data-item {
+  margin-bottom: 20px;
+}
+.data-item label {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+#email,
+#password,
+#name,
+#phone {
+  border: none;
+  border-bottom: 1px solid #333;
+  padding: 10px 5px;
+  width: 100%;
+}
+.gender,
+.dateOfBirth {
+  display: flex;
+  align-items: center;
+  height: 45px;
+}
+.gender__option {
+  display: flex;
+}
+.gender-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 30px 10px 0;
+}
+.gender-item:not(:first-child) {
+  margin-left: 20px;
+}
+.gender label {
+}
+.gender__title,
+.dateOfBirth__title {
+  display: flex;
+  justify-content: right;
+}
+#male,
+#female,
+#gender-other {
+  margin-right: 5px;
+}
+/* input[type=radio]{
+} */
+.dateOfBirth {
+  display: flex;
+}
+#date,
+#month,
+#year {
+  width: 90px;
+  height: 40px;
+  text-align: center;
+  padding: 0 10px;
+}
+#month,
+#year {
+  margin-left: 16px;
+}
+.btn__save {
+  margin-left: 0;
+  background-color: #000;
+  color: #fff;
+}
+.btn__save:hover {
+  opacity: 0.8;
+}
+
+.change-avatar {
+  padding: 0 30px;
+  text-align: justify;
+  /* max-width: 240px; */
+  border-left: 1px solid #ccc;
+}
+.change-avatar__image {
+}
+.change-avatar__image > img {
+  object-fit: cover;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  margin: auto;
+}
+.btn__change-image,
+.btn__save {
+  margin: 15px auto;
+  max-width: 120px;
+  padding: 5px 10px;
+  display: block;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.btn__change-image:hover {
+  background-color: rgb(243, 241, 241);
+}
+.btn__change-image span {
+}
+.input__describer {
+}
+/* modal */
+
+.modal__icon {
+  font-size: 50px;
+  color: rgb(37, 165, 20);
+}
+.modal__notify {
+}
+
+@media (max-width: 991px) {
+  #month,
+  #year {
+    margin-left: 10px;
+  }
+  #date,
+  #month,
+  #year {
+    width: 82px;
+  }
+  .sidebar-menu {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .user__main > .row {
+    flex-direction: column-reverse;
+  }
+  .change-avatar {
+    text-align: center;
+    padding-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #888;
+  }
+  .user__main .container-fluid {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 575px) {
+  .user__main {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .data-item label,
+  .gender__title,
+  .dateOfBirth__title {
+    justify-content: left;
+    font-weight: 500;
+  }
+  .dateOfBirth__title {
+    margin-bottom: 12px;
+  }
+  .btn__save {
+    margin: auto;
+    margin-top: 32px;
+    padding: 12px 40px;
+  }
+}

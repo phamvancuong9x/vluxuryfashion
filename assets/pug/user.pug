@@ -1,0 +1,89 @@
+extends layout/layout2
+include blocks/mixins
+block vars
+    -title = 'TÀI KHOẢN CỦA TÔI - VLUXURY'
+    -bodyClass = 'home-page'
+    -linkCss='assets/css/user.css'
+    -linkScripts='assets/javascript/user.js'
+block breadcrumbs
+    +breadcrumbs('TÀI KHOẢN CỦA TÔI','Tài khoản của tôi')
+block content
+  .container
+    // account-content
+    .row
+      ul.sidebar-menu.col-lg-2
+        // user
+        li.sidebar-item
+          .sidebar__avatar-image
+            img(src='assets/image/image_home/anhdaidien.jpg' alt='avatar-image')
+          .sidebar__user-name T&ecirc;n
+        li.sidebar-item
+          img(src='assets/image/image_home/icon1.png' alt='')
+          | Tài khoản của tôi
+        li.sidebar-item
+          img(src='assets/image/image_home/icon.png' alt='')
+          |  Đơn mua
+      .my-profile.col-lg-10
+        .user__title
+          .user__text(style='font-size:18px;font-weight: 500;') Hồ sơ của tôi 
+          .user__text Quản lý thông tin hồ sơ để bảo mật tài khoản
+        .user__main.container-fluid
+          .row
+            .col-md-8
+              form.container-fluid(action='' style='padding: 0 6px;')
+                .data-item.row
+                  label.col-12.col-sm-4(for='name')
+                    span.name__title  Tên đăng nhập
+                  .col-12.col-sm-8
+                    p#name
+                .data-item.row
+                  label.col-12.col-sm-4(for='email')
+                    span.email__title Email 
+                  .col-12.col-sm-8
+                    input#email(type='text' name='')
+                .data-item.row
+                  label.col-12.col-sm-4(for='phone')
+                    span.phone__title Số điện thoại
+                  .col-12.col-sm-8
+                    input#phone(type='text' name='')
+                .data-item.row.gender
+                  .gender__title.col-12.col-sm-4
+                    span  Giới tính
+                  .gender__option.col-12.col-sm-8
+                    label.gender-item(for='male')
+                      input#male(type='radio' name='gender')
+                      span Nam
+                    label.gender-item(for='female')
+                      input#female(type='radio' name='gender')
+                      span Nữ
+                    label.gender-item(for='gender-other')
+                      input#gender-other(type='radio' name='gender')
+                      span Khác
+                .data-item.dateOfBirth.row
+                  .dateOfBirth__title.col-12.col-sm-4
+                    span  Ngày sinh
+                  .dateOfBirth__select.col-12.col-sm-8
+                    select#date
+                      option(value='')
+                    select#month
+                    select#year
+                .data-item.row
+                  .col-lg-4
+                  .col-lg-8
+                    .btn__save Lưu
+            .col-md-4
+              .change-avatar
+                .change-avatar__image
+                  img(src='assets/image/image_home/anhdaidien.jpg' alt='image avatar')
+                label.btn__change-image(for='file')
+                  span Chọn ảnh
+                input#file(type='file' name='' style='display: none;' onchange='changeHandler(event)')
+                .input__describer
+                  p Kích thước tối thiểu 150x150px.
+                  p Định dạng jpg hoặc png.
+  //- modal
+  .modal
+    .modal__container
+      .modal__icon
+        i.far.fa-check-circle
+      p.modal__notify Đã cập nhật thông tin

@@ -1,0 +1,128 @@
+extends layout/layout3
+include blocks/mixins
+block vars
+    -title ='Thủ tục thanh toán - VLUXURY'
+    -bodyClass = 'home-page'
+    -linkCss='assets/css/checkout.css'
+    -linkScripts='assets/javascript/checkout.js'
+block content
+    .container
+        .row
+            .col-lg-5
+                section.information-order
+                    a(href="index.html" title="title")
+                        h2.information-order-title VLUXURY - THỜI TRANG DÀNH CHO PHÁI MẠNH
+                    .toggle-product-cart 
+                        i(class="fas fa-shopping-cart")
+                        .toggle-product-cart__text
+                            .toggle-product-cart__show Hiện Thông tin đơn hàng 
+                            .toggle-product-cart__hide Ẩn Thông tin đơn hàng 
+                    .product-list
+                    .information-order__discount-code
+                        .discount-code__input
+                            input(type="text" placeholder="Mã giảm giá")
+                            span.discount-code__btn-use Sử dụng
+                    .information-order__sum-price 
+                        span Tổng tiền
+                        span 0₫
+            .col-12.col-lg-7
+                .checkout-order
+                    a(href="index.html"  title="title")
+                        h2.checkout-order__title VLUXURY - THỜI TRANG DÀNH CHO PHÁI MẠNH
+                    .breadcrumbs
+                        a(href="cart.html", title="title") Giỏ hàng
+                        span / Thông tin vận chuyển 
+                        span  / Phương thức thanh toán
+                    section.info-ship 
+                        .info-ship__title  Thông tin vận chuyển
+                        .linkToLoginPage Bạn đã có tài khoản? 
+                            a(href="loginRegister.html", title="title") Đăng nhập 
+                        .info-ship__input
+                            input(type="text" placeholder="Họ và tên" id="name")
+                            .info-contact 
+                                .row 
+                                    .col-12.col-sm-8 
+                                        input(type="email" name="email" id="email" placeholder="Email"  required )
+                                    .col-12.col-sm-4 
+                                        input(type="tel"  name="phone-number"  id="phone-number"  placeholder="Điện thoại" required maxlength="15")
+                            .info-ship__address 
+                                 input(type="text" placeholder="Địa chỉ" id="address")
+                            .info-ship__address 
+                                .row 
+                                    .col-12.col-sm-6
+                                        select(class="city" ) 
+                                            option(value="Hà Nội")  Chọn Tỉnh Thành
+                                            option(value="Hà Nội")  Hà Nội
+                                            option(value="Hồ Chí Minh") Hồ Chí Minh
+                                            option(value="Bắc Giang")  Bắc Giang
+                                    .col-12.col-sm-6
+                                        select(class="district" ) 
+                                            option(value="Hà Nội")  Chọn Quận/Huyện
+                        .info-ship__footer 
+                            a(href="cart.html", title="title") Giỏ hàng
+                            .info-ship__footer-btn Phương thức thanh toán
+                    section.payment-methods
+                        .payment-methods__title Phương thức thanh toán
+                        ul 
+                            li
+                                label
+                                    input(type="radio", name="pay" checked="checked")
+                                    img(src='assets/image/image_product-detail/icon/cod.svg', alt='Ảnh icon')
+                                    .pay-name='Thanh toán khi giao hàng (COD)'
+                            li 
+                                +pay('assets/image/image_product-detail/icon/other.svg','Ảnh icon','Chuyển khoản qua ngân hàng')
+                            li 
+                                +pay('assets/image/image_product-detail/icon/vnpay_new.svg','Ảnh icon','Thẻ ATM/Visa/Master/JCB/QR Pay qua cổng VNPAY')
+                            li
+                                +pay('assets/image/image_product-detail/icon/grabmoca.svg','Ảnh icon','Ví Moca trên ứng dụng Grab') 
+                            li 
+                                +pay('assets/image/image_product-detail/icon/momo.svg','Ảnh icon','Ví Momo')
+                            li  
+                                +pay('assets/image/image_product-detail/icon/shopeepay_new.svg','Ảnh icon','Ví ShopeePay')
+                        .payment-methods__footer 
+                            .step-prev Trở lại thông tin vận chuyển
+                            .payment-methods__btn-buy Đặt hàng
+    .modal
+        .container
+            .row
+                .col-lg-9.col-md-10.col-sm-9.col-11
+                    .modal__container
+                        .modal__header 
+                            h3 VLUXURY - THỜI TRANG DÀNH CHO PHÁI MẠNH
+                        .modal__code-orders
+                            .modal__icon 
+                                i(class="far fa-check-circle")
+                            .modal__code-orders-text 
+                                p Đặt hàng thành công
+                                p Mã đơn hàng 
+                                   span.number-code-orders #112920
+                                p Cám ơn bạn đã mua hàng!
+                        .modal__info-order
+                            .modal__info-order-title Thông tin đơn hàng
+                            .modal__info-ship Thông tin vận chuyển
+                            .modal__name 
+                            .modal__number-phone 03232323656
+                            .modal__address 
+                                p Hà Nội 
+                                p Việt Nam
+                            .modal__shipping
+                                span.modal__shipping-title Phương thức thanh toán
+                                .modal__shipping-method Thanh toán khi giao hàng (COD)
+                        .modal__step-footer
+                            .modal__step-footer__left
+                                .modal__support
+                                    i(class="fas fa-question-circle")
+                                    span Cần hỗ trợ?
+                                    a(href="tel:0999996789") Liên hệ
+                                .changePageHome 
+                                    span Chuyển về trang chủ:
+                                        span.changePageHome__time 12 
+                                        span s
+                                        span.cancel Cancel
+                            a(href="index.html" class="modal__continue-buyProduct-btn ") Tiếp tục mua hàng
+        template#product_item   
+            +product-item('assets/image/image_product-detail/vest/Vest_LH67_2-2.jpg','Ảnh sản phẩm','ÁO VEST  KẺ XANH - 263','48','2,900,000₫')
+
+
+
+

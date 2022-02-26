@@ -1,0 +1,32 @@
+include mixins
+div.modal_content
+    .modal__cart-table
+        table
+            thead
+                tr
+                    th
+                    th Sản phẩm
+                    th Đơn giá
+                    th Số lượng
+                    th Thành tiền
+                    th
+            tbody#product-cart-list
+
+    .row.modal__checkout-actions 
+        .col-12.col-md-6
+            .modal__cart-note
+                textarea(name="" class="textarea-note" placeholder="Ghi chú")
+            .modal__btn-close.btn-save-info
+                i(class="fa fa-reply")
+                span Tiếp tục mua hàng
+        .col-12.col-md-6.modal__checkout-actions-right
+            h3.modal__total-money Tổng : 0,000,00₫
+            .modal__btn-checkout
+                .btn-update-to-cart Cập nhật giỏ hàng
+                a(href="checkout.html", title="title",class="btn-buys" class="btn-save-info") Tiến hành thanh toán
+.cart-empty 
+    p Giỏ hàng trống 
+    p Tiếp tục mua hàng
+        a(href="index.html", title="title") tại đây
+template#modal-cart-product 
+    +tableTr('assets/image/image_product-detail/vest/Vest_LH67_2-2.jpg','Ảnh sản phẩm','ÁO VEST  KẺ XANH - 263','48','2,900,000₫')

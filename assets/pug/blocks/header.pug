@@ -1,0 +1,162 @@
+include mixins
+//- header
+#back-to-top
+header
+	.slider-header
+		.slider-header__item
+			.carousel.slide(data-bs-ride='carousel')
+				.carousel-inner
+					.carousel-item.active
+						p.slider-header__text
+							| Chào mừng quý khách đến với VLUXURY
+					.carousel-item
+						p.slider-header__text
+							| Free ship từ đơn hàng 500k
+					.carousel-item
+						p.slider-header__text
+							| Nhập mã
+							span(class="margin-left-right-5" style='color: rgb(252, 101, 0);') D1AFAC
+							| giảm ngay 5% đơn hàng
+					.carousel-item
+						p.slider-header__text
+							| Free ship từ 500k
+					.carousel-item
+						p.slider-header__text Hỗ trợ 24/7
+	nav.nav-desktop
+		.nav__logo
+			a.link-home(href='index.html')
+				.logo__image
+					img(src='assets/image/image_home/logo1.png' alt='Image logo')
+				p.logo__text
+					| VLUXURY 
+					span R
+		.nav__center
+			ul.nav__center-list
+				li.nav__center-item.typeProduct(data-type-product="categoryProductSale",data-is-sale="true") Khuyến Mãi
+				li.nav__center-item.nav__parent-menu
+					| Sản phẩm
+					i.ti-angle-down
+					ul.nav__sub-menu.nav__sub-menu2
+						li.nav__sub-item
+							p(class="typeProduct",data-is-sale="false",data-type-product="vest")  ÁO VEST NAM 
+						li.nav__sub-item
+							p(class="typeProduct",data-is-sale="false",data-type-product="somi")   ÁO SƠ MI NAM 
+						li.nav__sub-item
+							p(class="typeProduct",data-is-sale="false",data-type-product="quanau")   QUẦN ÂU NAM 
+						li.nav__sub-item
+							p(class="typeProduct",data-is-sale="false",data-type-product="giay")   GIẦY DA NAM 
+						li.nav__sub-item
+							p(class="typeProduct",data-is-sale="false",data-type-product="phukien")   PHỤ KIỆN 
+				li.nav__center-item.nav__parent-menu
+					| Thiết kế riêng
+					i.ti-angle-down
+					ul.nav__sub-menu.nav__sub-menu2
+						li.nav__sub-item
+							a(href="customDesignShirt.html") ÁO SƠ MI RIÊNG
+						li.nav__sub-item
+							a(href="customDesignVest.html") BỘ SUIT RIÊNG
+				li.nav__center-item 
+					a(href="news.html") Tin Tức
+				li.nav__center-item
+					a(href="map.html") Cửa hàng
+		ul.nav__right-list
+			li.nav__right-item
+				label(for='nav__input-search')
+					.nav__search-title
+						| Tìm kiếm
+						i.fas.fa-search
+					.nav__search
+						input#nav__input-search.nav__input(type='text' placeholder='Tìm sản phẩm...')
+						a.nav__link-search(href='search.html')
+							i.fas.fa-search
+			li.nav__right-item.header__cart
+				+header-cart()
+			li.nav__right-item.nav__header-user
+				a(href='loginRegister.html')
+					i.fas.fa-user
+			li.header__user
+				.header__user-info
+					.header__user-image
+						img(src='assets/image/image_home/anhdaidien.jpg' alt='user image')
+				ul.header__user-list
+					li(style='padding-bottom:5px;border-bottom: 1px solid #ccc;')
+						.header__user-name
+					li.header__user-item
+						a(href='user.html')
+							span Tài khoản của tôi
+					li.header__user-item
+						span Đơn mua
+					li.header__user-item.header__user-logout
+						span Đăng xuất
+	// nav mobile
+	nav.nav-mobile
+		.nav-mobile__icon-cart.header__cart
+			+header-cart()
+		.nav-mobile__logo.nav__logo
+			a.link-home(href='index.html')
+				.logo__image
+					img(src='assets/image/image_home/logo1.png' alt='Image logo')
+				p.logo__text
+					| VLUXURY 
+					span R
+		.nav-mobile__menu-bars
+			.menu-bars__icon-bars
+				i.fas.fa-bars
+			.menu-bars-container
+				.menu-bars__close
+					span Menu
+					i.fas.fa-times
+				label.nav-mobile__search(for='nav-mobile__input-search')
+					input#nav-mobile__input-search.nav-mobile__input( type='text' placeholder='Tìm sản phẩm...')
+					a.nav-mobile__link-search(style='display: block')
+						i.fas.fa-search
+				ul.nav-mobile__center-list
+					li.nav-mobile__center-item.typeProduct(data-type-product="categoryProductSale",data-is-sale="true") Khuyến Mãi 
+					li.nav-mobile__center-item.nav-mobile__parent-menu.nav-mobile__parent-menu-iconPlus
+						.nav-mobile__parent-menu-title
+							a(href='#0') Sản Phẩm
+							i.ti-minus
+						ul.nav-mobile__sub-menu.nav-mobile__sub-menu2
+							li.nav-mobile__sub-item
+								p(class="typeProduct",data-is-sale="false",data-type-product="vest")  Áo vest nam 
+							li.nav-mobile__sub-item
+								p(class="typeProduct",data-is-sale="false",data-type-product="somi")  Áo sơ mi nam 
+							li.nav-mobile__sub-item
+								p(class="typeProduct",data-is-sale="false",data-type-product="quanau")  Quần âu nam 
+							li.nav-mobile__sub-item
+								p(class="typeProduct",data-is-sale="false",data-type-product="giay") Giầy da nam 
+							li.nav-mobile__sub-item
+								p(class="typeProduct",data-is-sale="false",data-type-product="phukien")  Phụ kiện 
+					li.nav-mobile__center-item.nav-mobile__parent-menu.nav-mobile__parent-menu-iconPlus
+						.nav-mobile__parent-menu-title.nav-mobile__parent-menu-design
+							| Thiết kế riêng  
+							i.ti-minus
+						ul.nav-mobile__sub-menu.nav__sub-menu2
+							li.nav-mobile__sub-item
+								a(href='customDesignShirt.html')  Áo sơ mi riêng
+							li.nav-mobile__sub-item
+								a(href='customDesignVest.html')  Bộ SUIT riêng
+					li.nav-mobile__center-item
+						a(href="news.html")  Tin Tức 
+					li.nav-mobile__center-item
+						a(href='map.html') Cửa Hàng
+					li.nav-mobile__center-item.nav-mobile-login
+						a(href='loginRegister.html')
+							i.fas.fa-user
+							span Đăng nhập
+					li.header-mobile__user.nav-mobile__center-item
+						.header-mobile__user-info
+							.header-mobile__user-image
+								img(src='assets/image/image_home/anhdaidien.jpg' alt='user image')
+						div.header-mobile__user-content
+							div(style='padding-bottom:5px;border-bottom: 1px solid #ccc;')
+								.header-mobile__user-name
+								i(class="ti-minus")
+							ul.header-mobile__user-list
+								li.header-mobile__user-item
+									a(href='user.html')
+										span Tài khoản của tôi
+								li.header-mobile__user-item
+									span Đơn mua
+								li.header-mobile__user-item.header__user-logout
+									span Đăng xuất

@@ -1,0 +1,159 @@
+
+extends layout/layout2
+include blocks/mixins
+block vars
+	-title = 'ÁO VEST GHI KẺ LH69 - VLUXURY '
+	-bodyClass = 'home-page'
+	-linkCss='assets/css/detail.css'
+	-linkScripts='assets/javascript/detail.js'
+block breadcrumbs
+	+breadcrumbs('ÁO VEST GHI KẺ LH69','Áo Vest Nam','/ Áo Vest ghi kẻ LH69')
+block content
+	#detailProductContent
+		template#detailProduct-template
+			.detailProduct-container
+				section.detailProduct
+					.container
+						.row
+							.detailProduct__image.col-md-5
+								.row 
+									.detailProduct__image-left.col-2
+										+tagImg("assets/image/image_product-detail/vest/Vest_LH69_1-1.jpg","Ảnh Áo Vest")
+										+tagImg("assets/image/image_product-detail/vest/Vest_LH69_2-1.jpg","Ảnh Áo Vest")
+										+tagImg("assets/image/image_product-detail/vest/Vest_LH69_3-1.jpg","Ảnh Áo Vest")
+										+tagImg("assets/image/image_product-detail/vest/Vest_LH69_4-1.jpg","Ảnh Áo Vest")
+									.detailProduct__image-right.col-10
+										+tagImg("assets/image/image_product-detail/vest/Vest_LH69_2-1.jpg","Ảnh Áo Vest")
+							.detailProduct__info.col-md-7
+								.detailProduct__header
+									h3.detailProduct__name ÁO VEST GHI KẺ LH69
+									.detailProduct__price 2,950,000₫
+								.detailProduct__describer
+									.detailProduct__describer-title Mô tả sản phẩm :
+									.detailProduct__describer-content 
+										p Áo vest nam may sẵn tôn dáng đủ size từ 50- 85kg trẻ trung, lịch sự chỉ từ 2.500.000đ Chất liệu vải nhập khẩu cao cấp không bai xù, nhăn co, màu sắc đa dạng, sắc nét. Áo vest có thể mặc trong các buổi tiệc, đi làm công sở,đi chơi...
+										p Lưu ý: Giá sản phẩm chỉ bao gồm áo vest chưa bao gồm quần âu.
+								.detailProduct__support
+									.detailProduct__support-title 100% BẠN SẼ HÀI LÒNG
+									.detailProduct__support-content 
+										.row
+											.col-6.box-support 
+												+box-support('assets/image/image_product-detail/icon/pro_policy_icon1_detail.webp','Ảnh icon support','Đổi trả miễn phí 365 ngày bất cứ lỗi sản phẩm khi nhận hàng')
+											.col-6.box-support 
+												+box-support('assets/image/image_product-detail/icon/pro_policy_icon5_detail.webp','Ảnh icon support','Đóng túi, hộp miễn phí với tất cả đơn hàng')
+										.row
+											.col-6.box-support 
+												+box-support('assets/image/image_product-detail/icon/pro_policy_icon4_detail.webp','Ảnh icon support','Ship hàng và kiểm tra hàng tại nhà trước khi thanh toán')
+											.col-6.box-support 
+												+box-support('assets/image/image_product-detail/icon/pro_policy_icon6_detail.webp','Ảnh icon support','Cam kết giá tốt nhất với chất lượng tốt nhất')
+								.detailProduct__user-buy
+									.detailProduct__size
+										.detailProduct__size-title SIZE:
+										span.detailProduct__size-item.borderColor-active 48
+										span.detailProduct__size-item 50
+										span.detailProduct__size-item 52
+										span.detailProduct__size-item 54
+										span.detailProduct__size-item 56
+									.detailProduct__quantity
+										.detailProduct__quantity-title Số lượng :
+										.detailProduct__quantity-input
+											form(action="#") 
+												input(type="text" value="1" name="quantity" id="quantity" pattern="[0-9]*" min='0' maxlength='2' required)
+											span.icon-minus.icon-quantity 
+												i(class="fas fa-minus")
+											span.icon-plus.icon-quantity 
+												i(class="fas fa-plus")
+										.detailProduct__status Còn hàng
+									.detailProduct__btn
+										.btn.btn__add-to-cart.add_cart_sever
+											i(class="fas fa-shopping-cart")
+											span Thêm vào giỏ
+										a(href="checkout.html").btn.btn__buyProduct.btn__add-to-cart.btn-save-info Mua ngay
+				section#sizeSpecification
+					.container
+						.tab_list.d-flex
+							#tab1.tab.tab__btn-header.tab-activity
+								| Thông số
+							#tab2.tab.tab__btn-header.bttn-tab
+								| Bảo Hành
+						.tab-content
+							#tab1-content.tab-describe.row
+								.col-12
+									+tagImg('assets/image/image_product-detail/vest/thongso_vest1.jpg','Ảnh Tthông số kích thước lựa chọn')
+							#tab2-content.tab-describe
+								i.tab2-content__title Nhằm giúp quý khách an tâm chọn lựa cho mình sản phẩm ưng ý và phục vụ khách hàng chu đáo, VLUXURY thông báo đến quý khách hàng CHÍNH SÁCH ĐỔI SẢN PHẨM chi tiết sau:
+								ul.policy-1 
+									li 
+										+text600('1.Thời gian ĐỔI sản phẩm')
+										ul.padding-left-40
+											li Áp dụng 01 lần đổi/ 01 đơn hàng.
+											li Sản phẩm mua tại hệ thống Showroom Vluxury: Trong vòng 7 ngày kể từ ngày mua.
+											li Sản phẩm mua Online trên website Vluxury và các trang TMĐT: Trong vòng 365 ngày kể từ ngày mua.
+											li  Ngày mua: là ngày ghi trên hóa đơn mua hàng.
+											li  Loại sản phẩm áp dụng: sản phẩm nguyên giá và các sản phẩm sale < 50%.
+									li  
+										+text600('2.Điều kiện sản phẩm đạt yêu cầu đổi')
+										ul 
+											li
+												+text500(' 1.1 Điều kiện ĐỔI:')
+												ul.padding-left-40 
+													li Sản phẩm chưa qua sử dụng, còn nguyên tem mác, hóa đơn mua hàng
+													li Sản phẩm thỏa mãn điều kiện của Thời hạn đổi sản phẩm
+													li Sản phẩm đã qua sử dụng nhưng bị lỗi kỹ thuật do sản xuất.
+													li Sản phâm không bị làm dơ, bẩn, hư hỏng bởi những tác nhân bên ngoài sau khi mua sản phẩm.
+													li Hàng hóa được xác định nguồn gốc mua tại Hệ thống Showroom Vluxury và kênh bán hàng Online của Vluxury.
+											li
+												+text500(' 2.2 Sản phẩm KHÔNG nhận ĐỔI:')
+												ul.padding-left-40 
+													li Sản phẩm đã sử dụng.
+													li Sản phẩm có mùi hóa mỹ phẩm.
+													li Sản phẩm quá thời hạn đổi.
+													li Sản phẩm không còn tem mác, ma sát với vật cứng làm trầy xước, hư hỏng.
+													li Không có hóa đơn mua hàng.
+											li
+												+text500(' 2.3 Giá trị ĐỔI hàng')
+												ul.padding-left-40 
+													li Sản phẩm đổi mới sẽ có giá trị ngang bằng hoặc lớn hơn giá trị sản phẩm đã mua trước đó.
+													li Trường hợp sản phẩm mới có giá trị cao hơn khách hàng phải trả thêm phần tiền phát sinh thêm.
+													li Trường hợp mua ưu đãi mà vẫn được đổi hàng theo quy chế chương trình thì sản phẩm đổi cũng được ưu đãi giống như sản phẩm mua lúc đầu nếu đang trong thời gian chương trình. Nếu đổi khi đã hết thời gian chương trình thì phần chênh lệch giá giữa 2 sản phẩm sẽ được tính nguyên giá.
+													li Nếu sản phẩm đổi nằm trong bộ Combo (Kèm quà tặng) thì khi đổi – sản phẩm quà tặng phải trả lại hoặc quy đổi sang giá trị tương đương theo tem nhãn của quà tặng
+									li
+										+text600('3.QUY ĐỊNH XỬ LÝ HÀNG ĐỔI')
+										ul 
+											li
+												+text500(' 3.1 Quy định ĐỔI tại CỬA HÀNG')
+												ul.padding-left-40
+													li Khách hàng mang sản phẩm tới Showroom Vluxury nới Qúy khách hàng mua hàng – Vluxury sẽ kiểm tra tình trạng sản phẩm và tiến hành đổi hàng với những trường hợp sản phẩm đáp ứng tiêu chí của điều kiện đổi hàng trong chính sách đã cam kết.
+													li Mọi thắc mắc về quy định chung tại cửa hàng vui lòng liên hệ 
+														span.margin-right-5 Hotline:
+														span.colorOrange 0999996789
+														span.margin-left-right-5 hoặc Email:
+														span.colorOrange vluxury@gmail.com
+											li 
+												+text500('3.2 Quy định ĐỔI hàng khi mua Online')
+												ul.padding-left-40 
+													li Bước 1: 
+															span.margin-right-5 Liên hệ tổng đài
+															span.colorOrange 0999996789
+															span.margin-left-right-5 để ĐĂNG KÝ đổi hàng.
+													li Bước 2: Gửi hàng về địa chỉ kho ONLINE  VLUXURY, Số 19 - Chùa Bộc, Đống Đa, Hà Nội
+													li Bước 3: VLUXURY gửi đổi sản phẩm mới khi nhận được hàng. Trong trường hợp hết hàng, VLUXRY sẽ liên hệ xác nhận.
+													li Lưu ý: Kho Online không nhận giữ hàng trong thời gian khách hàng gửi sản phẩm về để đổi hàng.
+													li Mọi thắc mắc về quy định đổi hàng khi mua Online vui lòng liên hệ HOTLINE: 
+														span.colorOrange  0999996789
+														span.margin-left-right-5 hoặc Email:  
+														span.colorOrange vluxury@gmail.com
+
+	section#similarProduct
+		.container
+			h3.similarProduct__title SẢN PHẨM TƯƠNG TỰ
+			#tab1-content
+				.row#similarProduct__list
+					
+			.bttn-container
+				.btn.similarProduct__btn XEM THÊM
+	template#similarProduct__item
+		+featured-products__item('assets/image/image_product-detail/vest/Vest_LH67_2-2.jpg','ÁO VEST  GHI KẺ LH67','2,950,000₫')
+	include blocks/modal_cart
+
+

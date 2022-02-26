@@ -1,0 +1,174 @@
+@import url("base.css");
+.container {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+.container > .row > div:first-child {
+  margin-bottom: 30px;
+}
+.container > .row > div:first-child,
+.container > .row > div:last-child {
+  display: flex;
+  justify-content: center;
+}
+select {
+  border: 1px solid #7c7c7c;
+  box-sizing: border-box;
+  margin-top: 15px;
+  padding: 7px 50px;
+}
+.onLoadingDiv {
+  display: none;
+  background-color: #fff !important;
+}
+#content-create {
+  max-width: 460px;
+  padding: 0 25px;
+}
+#content-create .row {
+  --bs-gutter-x: 12px;
+}
+.create__title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: #333333;
+}
+.create__describe {
+  margin: 12px 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #787878;
+}
+.select-fabric__item {
+  padding-bottom: 12px;
+}
+.select-item img {
+  border: 2px solid #e8e8e8;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+.select-item img:hover {
+  border-color: #666 !important;
+}
+.select__title,
+.select-size {
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  border-top: 1px solid #b8b8b8;
+  cursor: pointer;
+}
+.select__title i {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 16px;
+}
+.iconPlus > i::after {
+  position: absolute;
+  top: calc(50% - 0.6px);
+  left: calc(50% - 7px);
+  content: "";
+  width: 12.6px;
+  height: 1.1px;
+  z-index: 2;
+  background-color: #000;
+  transform: rotate(90deg);
+}
+.select__title span:nth-child(2) {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #333333;
+  padding: 15px 30px;
+  flex: 1;
+}
+.select__list {
+  /* padding-bottom: 12px; */
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s linear;
+}
+.select-fit__item,
+.select-collar__item {
+  padding-bottom: 12px;
+}
+.select-cuff__item {
+  padding-bottom: 12px;
+}
+.price__product {
+  padding: 15px 0;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  color: #ff0000;
+}
+.detailProduct__btn {
+  margin-top: 8px;
+  margin-bottom: 23px;
+}
+
+.btn {
+  color: #fff;
+  transition: linear 0.3s;
+}
+.btn:hover {
+  color: #fff;
+}
+.btn__add-to-cart {
+  padding: 15px 12px;
+  background: #000;
+  margin-right: 18px;
+}
+.btn__add-to-cart i {
+  padding-right: 6px;
+  font-size: 20px;
+}
+.btn__buyProduct {
+  padding: 15px 40px;
+  background-color: #fbb416;
+}
+.btn__add-to-cart:hover,
+.similarProduct__btn:hover {
+  background-color: #333;
+}
+.btn__buyProduct:hover {
+  background-color: #da9804;
+}
+.deliveryTime {
+  border-top: 1px solid #b8b8b8;
+  padding-top: 10px;
+}
+.answer {
+  float: right;
+  background: rgba(0, 0, 0, 0) url(../image/product_feature/So_mi/bg-answer.png)
+    no-repeat scroll right 0;
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  height: 20px;
+  margin-right: -2px;
+  padding-right: 38px;
+  transition: background-position 0.25s ease 0s;
+  /*  */
+  color: #bbb;
+}
+@media (max-width: 767px) {
+  .btn__buyProduct {
+    width: 100%;
+  }
+}
+@media (max-width: 360px) {
+  #product__image {
+    width: 320px !important;
+  }
+}

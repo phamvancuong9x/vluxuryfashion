@@ -1,0 +1,145 @@
+
+extends layout/layout2
+include blocks/mixins
+block vars
+    -title = 'Thiết kế riêng - VLUXURY '
+    -bodyClass = 'home-page'
+    -linkCss='assets/css/customDesignVest.css'
+    -linkScripts='assets/javascript/customDesignVest.js'
+block breadcrumbs
+    +breadcrumbs('THIẾT KẾ BỘ VEST CỦA RIÊNG BẠN',' Thiết kế riêng')
+block content
+    .container
+        .row
+            .col-12.col-md-6
+                #product__image 
+                    +tagImg('assets/image/product_feature/vest/vest-1/fit-1.jpg','Image-vest')
+            .col-12.col-md-6
+                #content-create 
+                    .create__title Thiết kế bộ Vest riêng của bạn
+                    .create__describe Chọn từ một loạt các loại vải tốt nhất Ý và chọn phù hợp và kích thước của bạn.
+                    .select-container
+                        .select-fabric
+                            h3.select-fabric__title.select__title.iconPlus   
+                                i(class="ti-minus")
+                                span Chọn vải 
+                                span.answer 
+                            ul.select-fabric__list.select__list.row
+                                .col-3.li.select-fabric__item.select-item(data-vest="vest-1")
+                                    +tagImg('assets/image/product_feature/vest/vai/vest-1.jpg','Image-fabric')
+                                .col-3.li.select-fabric__item.select-item(data-vest="vest-2") 
+                                    +tagImg('assets/image/product_feature/vest/vai/vest-2.jpg','Image-fabric')
+                                .col-3.li.select-fabric__item.select-item(data-vest="vest-3") 
+                                    +tagImg('assets/image/product_feature/vest/vai/vest-3.jpg','Image-fabric')
+                                .col-3.li.select-fabric__item.select-item(data-vest="vest-4") 
+                                    +tagImg('assets/image/product_feature/vest/vai/vest-4.jpg','Image-fabric')
+                                .col-3.li.select-fabric__item.select-item(data-vest="vest-5") 
+                                    +tagImg('assets/image/product_feature/vest/vai/vest-5.jpg','Image-fabric')
+                                .col-3.li.select-fabric__item.select-item(data-vest="vest-6") 
+                                    +tagImg('assets/image/product_feature/vest/vai/vest-6.jpg','Image-fabric')
+                                .col-3.li.select-fabric__item.select-item(data-vest="vest-7") 
+                                    +tagImg('assets/image/product_feature/vest/vai/vest-7.jpg','Image-fabric')
+                                .col-3.li.select-fabric__item.select-item(data-vest="vest-8") 
+                                    +tagImg('assets/image/product_feature/vest/vai/vest-8.jpg','Image-fabric')
+                                .col-3.li.select-fabric__item.select-item(data-vest="vest-9") 
+                                    +tagImg('assets/image/product_feature/vest/vai/vest-9.jpg','Image-fabric')
+                                .col-3.li.select-fabric__item.select-item(data-vest="vest-10") 
+                                    +tagImg('assets/image/product_feature/vest/vai/vest-10.jpg','Image-fabric')
+                                .col-3.li.select-fabric__item.select-item(data-vest="vest-11") 
+                                    +tagImg('assets/image/product_feature/vest/vai/vest-11.jpg','Image-fabric')
+                                .col-3.li.select-fabric__item.select-item(data-vest="vest-12") 
+                                    +tagImg('assets/image/product_feature/vest/vai/vest-12.jpg','Image-fabric')
+                                .col-3.li.select-fabric__item.select-item(data-vest="vest-13") 
+                                    +tagImg('assets/image/product_feature/vest/vai/vest-13.jpg','Image-fabric')
+                                .col-3.li.select-fabric__item.select-item(data-vest="vest-14") 
+                                    +tagImg('assets/image/product_feature/vest/vai/vest-14.jpg','Image-fabric')
+                                .col-3.li.select-fabric__item.select-item(data-vest="vest-15") 
+                                    +tagImg('assets/image/product_feature/vest/vai/vest-15.jpg','Image-fabric')
+                                .col-3.li.select-fabric__item.select-item(data-vest="vest-16") 
+                                    +tagImg('assets/image/product_feature/vest/vai/vest-16.jpg','Image-fabric')
+                        .select-fit
+                            h3.select-fit__title.select__title.iconPlus   
+                                i(class="ti-minus")
+                                span Chọn fit
+                                span.answer 
+                            ul.select-fit__list.select__list.row
+                                .col-4.li.select-fit__item.select-item(data-fit="fit-1")
+                                    +tagImg('assets/image/product_feature/vest/fit/fit-1.jpg','Image-fit')
+                                .col-4.li.select-fit__item.select-item(data-fit="fit-2") 
+                                    +tagImg('assets/image/product_feature/vest/fit/fit-2.jpg','Image-fit')
+                                .col-4.li.select-fit__item.select-item(data-fit="fit-3") 
+                                    +tagImg('assets/image/product_feature/vest/fit/fit-3.jpg','Image-fit')
+                                .col-4.li.select-fit__item.select-item(data-fit="fit-4") 
+                                    +tagImg('assets/image/product_feature/vest/fit/fit-4.jpg','Image-fit')
+                                .col-4.li.select-fit__item.select-item(data-fit="fit-5") 
+                                    +tagImg('assets/image/product_feature/vest/fit/fit-5.jpg','Image-fit')
+                                .col-4.li.select-fit__item.select-item(data-fit="fit-6") 
+                                    +tagImg('assets/image/product_feature/vest/fit/fit-6.jpg','Image-fit')
+                        .select-waistcoat
+                            h3.select-waistcoat__title.select__title.iconPlus      
+                                i(class="ti-minus")
+                                span Chọn áo ghi lê (tùy chọn)
+                                span.answer 
+                            .select-waistcoat__list.select__list.row
+                                .col-4.select-waistcoat__item
+                                    +tagImg('assets/image/product_feature/vest/waistcoat.jpg','Image-waistcoat')
+                                .col-8.select-waistcoat__right
+                                    p Bạn có muốn thêm một áo ghi lê?
+                                    p *xin lưu ý rằng áo ghi lê sẽ được giao vào kích thước tương tự như áo khoác của bạn.
+                                    p 
+                                        span Có, thêm áo ghi lê 
+                                            span (+ 1,250,000đ )
+                                        input(type="checkbox", name="")
+                                    
+                        .select-trousers
+                            h3.select-trousers__title.select__title.iconPlus    
+                                i(class="ti-minus")
+                                span Chọn quần bổ xung (tùy chọn)
+                                span.answer 
+                            .select-trousers__list.select__list.row
+                                .col-4.select-trousers__item
+                                    +tagImg('assets/image/product_feature/vest/trousers.jpg','Image-trousers')
+                                .col-8.select-trousers__right
+                                    p Bạn có muốn thêm một cặp bổ sung của quần?
+                                    p *xin lưu ý rằng các quần bổ sung sẽ được giao vào kích thước giống như quần áo của bạn.
+                                    p 
+                                        span Có, thêm  quần 
+                                            span (+ 1,250,000đ )
+                                        input(type="checkbox", name="")
+                        .select-size 
+                            h3.select__title.iconPlus    
+                                i(class="ti-minus")
+                                span Chọn size
+                                span.answer 
+                            .row.select__list
+                                .col-6
+                                    select(class="size",name="")
+                                        option(value="default") Kích thước áo
+                                        option(value="39") 39  
+                                        option(value="40") 40  
+                                        option(value="41") 41  
+                                        option(value="41") 41  
+                                        option(value="42") 42  
+                                        option(value="L") L  
+                                        option(value="M") M  
+                                        option(value="XL") XL  
+                                        option(value="XS") XS 
+                                .col-6
+                                    select(class="size",name="")
+                                        option(value="default") Kích thước quần
+                                        option(value="39") 39  
+                                        option(value="40") 40  
+                                        option(value="41") 41  
+                                        option(value="41") 41  
+                                        option(value="42") 42  
+                                        option(value="L") L  
+                                        option(value="M") M  
+                                        option(value="XL") XL  
+                                        option(value="XS") XS 
+                        .price__product 10,950,000đ
+                        .detailProduct__btn
+                            //- .btn.btn__add-to-cart.add_cart_sever
+                            //-     i(class="fas fa-shopping-cart")
+                            //-     span Thêm vào giỏ
+                            a(href="checkout.html").btn.btn__buyProduct.add_cart_sever Mua ngay 
+                        .deliveryTime Thời gian giao hàng     4-5 tuần

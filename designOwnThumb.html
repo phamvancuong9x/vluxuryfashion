@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .onLoadingDiv {
+        display: none;
+        background-color: #fff !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="demo"></div>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="assets/3dEye-master/3deye.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#demo").vc3dEye({
+          imagePath: "../assets/image/product_feature/So_mi/thumb-127-03/", // the location where you’ve put the images.
+          totalImages: 24, // the number of images you have.
+          imageExtension: "png",
+          // the extension of the images. Make sure all the images have same extension.
+        });
+      });
+    </script>
+  </body>
+</html>

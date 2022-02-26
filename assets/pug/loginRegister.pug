@@ -1,0 +1,101 @@
+extends layout/layout2
+include blocks/mixins
+block vars
+    -title = 'Áo Vest nam - VLUXURY '
+    -bodyClass = 'home-page'
+    -linkCss='assets/css/loginRegiter.css'
+    -linkScripts='assets/javascript/login.js'
+block breadcrumbs
+    +breadcrumbs('TÀI KHOẢN','Tài khoản')
+block content
+    #login
+        .container
+            .container__content
+            .content__title
+                h1 &Dstrok;&abreve;ng nh&#x1EAD;p
+            form(action='')
+                .input-userName
+                    input#userName-login.userName(type='text' name='userName' placeholder='Tên tài khoản')
+                    .notification-error.userName-error1
+                        i.error-icon.fas.fa-exclamation-circle
+                        |  Vui l&ograve;ng &dstrok;i&#x1EC1;n v&agrave;o tr&#x1B0;&#x1EDD;ng n&agrave;y!
+                    .notification-error.userName-error2
+                        i.error-icon.fas.fa-exclamation-circle
+                        | Vui l&ograve;ng nh&#x1EAD;p 6 k&iacute; t&#x1EF1; tr&#x1EDF; l&ecirc;n!
+                    .notification-error.userName-error3
+                        i.error-icon.fas.fa-exclamation-circle
+                        p  T&ecirc;n &dstrok;&abreve;ng nh&#x1EAD;p kh&ocirc;ng &dstrok;&uacute;ng !
+                .input-password
+                    input#password-login.password(type='password' name='password ' placeholder='Mật khẩu ')
+                    .view-icon
+                        i.far.fa-eye-slash
+                    .notification-error.password-error1
+                        i.error-icon.fas.fa-exclamation-circle
+                        |  Vui l&ograve;ng &dstrok;i&#x1EC1;n v&agrave;o tr&#x1B0;&#x1EDD;ng n&agrave;y
+                    .notification-error.password-error2
+                        i.error-icon.fas.fa-exclamation-circle
+                        | Vui l&ograve;ng nh&#x1EAD;p 6 k&iacute; t&#x1EF1; tr&#x1EDF; l&ecirc;n
+                    .notification-error.password-error3
+                        i.error-icon.fas.fa-exclamation-circle
+                        p M&#x1EAD;t kh&#x1EA9;u kh&ocirc;ng &dstrok;&uacute;ng !
+                .big-btn
+                .btn__bgColor
+                a.link-home-input(href='#')
+                    input.btn.btn__login(type='button' value='ĐĂNG NHẬP')
+            .social__container
+                .social__item.facebook-item
+                    i.social__facebook-icon.fab.fa-facebook-f
+                    p.social__text Facebook
+                .social__item.google-item
+                    i.social__google-icon.fab.fa-google-plus-g
+                    p.social__text Google
+            a(href="index.html").back-to-home Trở về
+            .create-account
+                span.link-convert-html.create-account-link Đăng kí
+            a(href="").forget-password  Quên mật khẩu
+    #Register
+        .container
+            .container__content
+            .content__title
+                h1 &Dstrok;&Abreve;NG K&Iacute;
+            form(action='')
+                .input-userName
+                    input#userName-resgiter.userName(type='text' name='userName' placeholder='Tên tài khoản')
+                    .notification-error.userName-error1
+                        i.error-icon.fas.fa-exclamation-circle
+                        |  Vui l&ograve;ng &dstrok;i&#x1EC1;n v&agrave;o tr&#x1B0;&#x1EDD;ng n&agrave;y!
+                    .notification-error.userName-error2
+                        i.error-icon.fas.fa-exclamation-circle
+                        |  Vui l&ograve;ng nh&#x1EAD;p 6 k&iacute; t&#x1EF1; tr&#x1EDF; l&ecirc;n!
+                .input-password
+                    input#password-resgiter.password(type='password' name='password ' placeholder='Mật khẩu')
+                    .view-icon
+                        i.far.fa-eye-slash
+                    .notification-error.password-error1
+                        i.error-icon.fas.fa-exclamation-circle
+                        |  Vui l&ograve;ng &dstrok;i&#x1EC1;n v&agrave;o tr&#x1B0;&#x1EDD;ng n&agrave;y!
+                    .notification-error.password-error2
+                        i.error-icon.fas.fa-exclamation-circle
+                        | Vui l&ograve;ng nh&#x1EAD;p 6 k&iacute; t&#x1EF1; tr&#x1EDF; l&ecirc;n!
+                .input-password-confirm
+                    input#confirmPassword(type='password' name='confirmPassword' placeholder='Xác nhận mật khẩu')
+                    .view-icon-confirm
+                        i.far.fa-eye-slash
+                    .notification-error.confirm-password-error1
+                        i.error-icon.fas.fa-exclamation-circle
+                        |  Vui l&ograve;ng &dstrok;i&#x1EC1;n v&agrave;o tr&#x1B0;&#x1EDD;ng n&agrave;y!
+                    .notification-error.confirm-password-error2
+                        i.error-icon.fas.fa-exclamation-circle
+                        | M&#x1EAD;t kh&#x1EA9;u nh&#x1EAD;p l&#x1EA1;i kh&ocirc;ng kh&#x1EDB;p v&#x1EDB;i nhau!
+                .big-btn
+                .btn__bgColor
+                input.btn.btn__register(type='button' value='ĐĂNG KÍ')
+            .social__container
+                .social__item.facebook-item
+                    i.social__facebook-icon.fab.fa-facebook-f
+                    p.social__text Facebook
+                .social__item.google-item
+                    i.social__google-icon.fab.fa-google-plus-g
+                    p.social__text Google
+            .create-account
+                span.link-convert-html.pagesLogIn-link &Dstrok;&abreve;ng nh&#x1EAD;p

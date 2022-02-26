@@ -1,0 +1,30 @@
+extends layout/layout2
+include blocks/mixins
+block vars
+    -title = 'Hệ thống cửa hàng - VLUXURY'
+    -bodyClass = 'home-page'
+    -linkCss='assets/css/map.css'
+    -linkScripts=''
+block breadcrumbs
+    +breadcrumbs('HỆ THỐNG CỬA HÀNG','Hệ thống cửa hàng')
+block content
+    .container
+        .row
+            .col-12.col-lg-6
+                .google-map 
+                    iframe(src="https://www.google.com/maps/d/u/0/embed?mid=12hwJDNvLEDIGGwvYVM3jHMqJkDGDmnNH&ehbc=2E312F" width="100%" height="380px")
+            .col-12.col-lg-6
+                .shop-address 
+                    h1.shop-address HỆ THỐNG CỬA HÀNG
+                    ul.shop-address__list 
+                        li 1, Vluxury Chùa Bộc: Số 19, Chùa Bộc, Đống Đa, Hà Nội
+                        li 2, Vluxury Cầu Giấy: Số 330 Cầu Giấy, Cầu Giấy, Hà Nội
+                        li 3, Vluxury Cầu Giấy 2: 213 Cầu Giấy, Dịch Vọng, Cầu giấy, Hà Nội
+                        li 4, Vluxury Phố Huế: 351 Phố Huế, Hai Bà Trưng, Hà Nội
+                        li 5, Vluxury Trần Phú: Số 53 Trần Phú, P.Văn Quán, Q.Hà Đông, TP.Hà Nội
+                        li 6, Vluxury Nguyễn Văn Cừ: Số 211 Nguyễn Văn Cừ, Long Biên, Hà Nội
+                        li 7, Vluxury Quang Trung - Hà Đông: Số 405 Quang Trung, Hà Đông, Hà Nội
+                        li 8, Vluxury Chúc Sơn: Số 7 Bắc Sơn, TT Chúc Sơn, Chương Mỹ, Hà Nội
+                        li 9, Vluxury Đông Anh: Số 244 Cao Lỗ, Đông Anh, Hà Nội
+                        li 10, Vluxury Sơn Tây: 263 Quang Trung - tx Sơn Tây (Gần ngã ba Quang Trung sang Cầu Trì)
+                        li 11,Vluxury Lê Văn SỸ: 370 Lê Văn Sỹ, Phường 14, Quận 3,Thành phố Hồ Chí Minh

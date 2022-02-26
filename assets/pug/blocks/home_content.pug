@@ -1,0 +1,136 @@
+include mixins
+.content
+  section.main__slider
+    #carouselExampleIndicators.carousel.slide(data-bs-ride='carousel' data-bs-touch='true')
+      .carousel-indicators
+        button.active(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='0' aria-current='true' aria-label='Slide 1')
+        button(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='1' aria-label='Slide 2')
+      .carousel-inner
+        .carousel-item.active.typeProduct(data-is-sale="false",data-type-product="vest")
+          img.slider1(src='assets/image/image_home/slideshow1_noText.png' alt='...')
+          img.slider1_mobile(src='assets/image/image_home/slideshow1_noText_mobile.jpg' alt='...')
+          .textslider.wow.animate__animated.animate__backInRight
+            img(src='assets/image/image_home/slideshow1Copy.png' alt='image slideShow')
+        .carousel-item.typeProduct(data-is-sale="false",data-type-product="vest")
+          img.slider2(src='assets/image/image_home/slideshow_1.jpg' alt=' image slideShow')
+          img.slider2_mobile(src='assets/image/image_home/slideshow_1_mobile_2.png' alt='...')
+    button.carousel-control-prev.main__slider-control(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='prev')
+      .carousel-control-next-icon-container
+        span.carousel-control-prev-icon(aria-hidden='true')
+      span.visually-hidden Previous
+    button.carousel-control-next.main__slider-control(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='next')
+      .carousel-control-next-icon-container
+        span.carousel-control-next-icon(aria-hidden='true')
+      span.visually-hidden Next
+  // nội dung trong khung 1200px
+  .container.container-banner
+    section.banner.typeProduct(data-type-product="categoryProductSale",data-is-sale="true")
+        .banner__image
+          img(src='assets/image/image_home/banner_photoshop2.jpg' alt='image-banner')
+          img(src='assets/image/image_home/banner_photo_mobile4.jpg' alt='image-banner')
+        .banner__time
+          .banner__time-header
+            .banner__time-title.wow.animate__animated.animate__fadeInLeft.animate__delay-1s
+              | TIME SALE
+            .banner__time-start.wow.animate__animated.animate__fadeInRight.animate__delay-1s
+          .banner__time-event
+            .banner__event-status.wow.animate__animated.animate__bounceIn.animate__delay-1s Sắp bắt đầu
+            .banner__time-group.wow.animate__animated.animate__fadeInUp.animate__delay-1s
+              .banner__time-date
+                #banner__date.banner__time-number 0
+                .banner__time-name Ngày
+              .banner__time-hours
+                #banner__hours.banner__time-number 0
+                .banner__time-name Giờ
+              .banner__time-minute
+                #banner__minutes.banner__time-number 0
+                .banner__time-name Phút
+              .banner__time-seconds
+                #banner__seconds.banner__time-number 0
+                .banner__time-name Giây
+    // section collection-list
+    section.collection-list
+      .row
+        .col-md-6.col-sm-6
+              +collection__item('assets/image/image_home/vest (2).png','VEST','vest','false')
+        .col-md-6.col-sm-6
+          .row
+            .col-6
+              +collection__item('assets/image/image_home/so_mi.png','SƠ MI','somi','false')
+            .col-6
+                +collection__item('assets/image/image_home/quan_au.png','QUẦN TÂY','quanau','false')
+          .row
+            .col-6
+                +collection__item('assets/image/image_home/giay.png','GIẦY','giay','false')
+            .col-6
+                +collection__item('assets/image/image_home/phu_kien.png','PHỤ KIỆN','phukien','false')
+  section.featured-products
+    .container
+      .section__title SẢN PHẨM NỔI BẬT
+      .tab_list
+        #tab1.featured-products__list.tab__btn-header.tab-activity
+          | Bộ Vest mới
+        #tab2.featured-products__list.tab__btn-header.bttn-tab
+          | Bán chạy
+        #tab3.featured-products__list.tab__btn-header.bttn-tab
+          | Khuyến mãi
+      .tab-content
+        #tab1-content.tab-describe
+          ul.row
+            +featured-products__item('assets/image/image_home/bst_moi1.png','ÁO VEST GHI KẺ LH69','2,950,000₫','c1','vest')
+            +featured-products__item('assets/image/image_home/bst_moi2.jpg','ÁO VEST GHI KẺ LH67-A','2,900,000₫','c2','vest')
+            +featured-products__item('assets/image/image_home/bst_moi3.jpg','ÁO VEST KẺ XANH 263','2,950,000₫','c3','vest')
+            +featured-products__item('assets/image/image_home/bst_moi4.jpg','ÁO VEST BE AV256','2,900,000₫','c4','vest')
+          .tab__btn.tab1-content__btn.bttn.wow.animate__animated.animate__fadeInUp.typeProduct(data-type-product="vest",data-is-sale="false") XEM THÊM
+        #tab2-content.tab-describe
+          ul.row
+             +featured-products__item('assets/image/image_home/san_pham_ban_chay_home1.jpg','ÁO VEST XANH LH73','2,950,000₫','c10','vest')
+             +featured-products__item('assets/image/image_home/san_pham_ban_chay_home2.jpg','ÁO VEST XANH KẺ AVLH50','2,950,000₫','c7','vest')
+             +featured-products__item('assets/image/image_home/san_pham_ban_chay_home3.jpg','ÁO VEST XANH KẺ LH63','2,950,000₫','c28','vest')
+             +featured-products__item('assets/image/image_home/san_pham_ban_chay_home4.jpg','ÁO VEST XANH AV246','2,950,000₫','c15','vest')
+          .tab__btn.tab2-content__btn.bttn.typeProduct(data-type-product="vest",data-is-sale="false") XEM THÊM
+        #tab3-content.tab-describe
+          ul.row
+             +featured-products__item('assets/image/image_home/san_pham_khuyen_mai_home1.png','ÁO VEST ĐEN SỌC 286','2,700,000₫','c26','vest','-10%','3,000,000₫')
+             +featured-products__item('assets/image/image_home/san_pham_khuyen_mai_home2.png','ÁO VEST GHI KẺ LH67-B','2,700,000₫','c25','vest','-10%','3,000,000₫')
+             +featured-products__item('assets/image/image_home/san_pham_khuyen_mai_home3.png','ÁO VEST XANH KẺ LH64','2,700,000₫','c6','vest','-10%','3,000,000₫')
+             +featured-products__item('assets/image/image_home/san_pham_khuyen_mai_home4.png','ÁO VEST XANH TT KẺ 245','2,700,000₫','c27','vest','-10%','3,000,000₫')
+          .tab__btn.tab3-content__btn.bttn.typeProduct(data-type-product="categoryProductSale",data-is-sale="true") XEM THÊM
+  
+  // section design
+  section.design-own
+    .design-own__header
+      .section__title THIẾT KẾ RIÊNG
+      .design-own__custom.row
+        .col-md-12.col-lg-4.design-own__describe
+          .design-own__title THIẾT KẾ CỦA RIÊNG BẠN
+          .design-own__text
+            | Lựa chọn từ một loạt các loại vải tốt nhất và hoàn thiện từng chi tiết một
+        +custom__item('assets/image/image_home/logo_vest.png','Áo sơ mi','customDesignShirt.html')
+        +custom__item('assets/image/image_home/create3s.png','SUIT','customDesignVest.html')
+  
+  //section famousPeoples
+  section.famousPeoples
+    .container
+      .section__title Người Nổi Tiếng
+      .row
+        +famousPeople__item('assets/image/image_home/quanAP.jpg','Ca si Quân AP')
+        +famousPeople__item('assets/image/image_home/Xuan_Băc.jpg','Nghệ sĩ Xuân Bắc')
+        +famousPeople__item('assets/image/image_home/LyHai.jpg','Ca sĩ Lý hải')
+        +famousPeople__item('assets/image/image_home/Ngo_Kien_Huy.jpg','Ca sĩ Ngô Kiến Huy')
+  section.collection-news
+    .container
+      .section__title TIN TỨC THỚI TRANG
+      .row
+        a.col-12.col-sm-6.col-md-5.col-lg-6.collection-news__image(href='#0')
+          img(src='assets/image/news/tintucmoi1.jpg' alt='image news')
+        .col-sm-6.col-md-7.col-lg-6
+          .collection-news__item
+            +collection-news__item-row('assets/image/image_home/news2.jpg','PHỐI ĐỒ CHUẨN PHONG CÁCH SUIT HÀN – Ý THEO PHIM VINCENZO','15/12/21')
+            +collection-news__item-row('assets/image/news/tintucmoi3.jpg' ,'3 BỘ ĐỒ MÀ CHÀNG TRAI NÊN CÓ TRONG TỦ QUẦN ÁO','05/01/22')
+            +collection-news__item-row('assets/image/news/tintucmoi4.jpg','XU HƯỚNG THỜI TRANG CHO ÁO SƠ MI NĂM 2022','05/01/22')
+            +collection-news__item-row('assets/image/news/tintucmoi5.jpg','PHONG CÁC TỰ DO VÀ BỘ ĐỒ ÁO VEST NAM KHÔNG THẮT LƯNG','16/01/22')
+  // section map
+  section#home-shop-map
+    .home-shop-map__title TÌM CỬA HÀNG GẦN BẠN NHẤT
+    a(href="map.html").home-shop-map__btn.bttn.wow.animate__animated.animate__bounceIn.animate__delay-1s HỆ THỐNG CỬA HÀNG

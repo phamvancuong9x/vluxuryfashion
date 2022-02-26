@@ -1,0 +1,48 @@
+@import url("base.css");
+@import url("detail.css");
+.modal__cart-table {
+  max-height: none !important;
+  /* overflow: visible; */
+}
+h2 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  padding-bottom: 30px;
+}
+th {
+  padding: 15px 0 !important;
+}
+.modal__total-money {
+  padding-top: 8px;
+}
+.modal__btn-close {
+  display: none;
+}
+
+.btn-update-to-cart {
+  display: block;
+}
+.cart-empty {
+  border: none;
+  padding-bottom: 40px;
+}
+@media (max-width: 1023px) {
+  .modal__checkout-actions {
+    padding-bottom: 30px;
+  }
+}
+@media (max-width: 576px) {
+  .modal__checkout-actions {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 30px;
+  }
+  .modal__cart-note {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .modal__checkout-actions > div {
+    padding-right: 0;
+  }
+}

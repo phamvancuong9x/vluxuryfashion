@@ -1,0 +1,13 @@
+extends layout/layout2
+include blocks/mixins
+block vars
+    -title = 'GIỎ HÀNG CỦA BẠN - VLUXURY'
+    -bodyClass = 'home-page'
+    -linkCss='assets/css/cart.css'
+    -linkScripts='assets/javascript/cart.js'
+block breadcrumbs
+    +breadcrumbs(' GIỎ HÀNG CỦA BẠN','Giỏ hàng của bạn')
+block content
+    .container
+        <h2>Giỏ hàng</h2>
+        include blocks/block_cart

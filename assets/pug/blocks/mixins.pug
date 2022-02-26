@@ -1,0 +1,189 @@
+//- breadcrumbs
+mixin breadcrumbs(breadcrumbs__title,breadcrumbs__title1,breadcrumbs__title2)
+  .breadcrumbs
+          .breadcrumbs__linkPage 
+              i(class="fas fa-home")
+              .breadcrumbs__linkPage-container 
+                span 
+                  a(href="index.html")  Trang chủ /
+                span=breadcrumbs__title1
+                span=breadcrumbs__title2
+          .breadcrumbs__content
+              h3.breadcrumbs__content-title=breadcrumbs__title
+
+//- index (Trang chủ)
+//- Section Collection
+mixin collection__item(linkImage,collection_title,typeProduct,isSale)
+    div(data-type-product=typeProduct,data-is-sale=isSale).collection__item.typeProduct
+                p.collection__item-image
+                  img(src=linkImage alt='image-collection')
+                .collection-title.wow.animate__animated.animate__fadeInUp.animate__delay-1s=collection_title
+                p.bttn.collection__bttn XEM THÊM
+//- section Sản Phẩm nổi bật
+mixin featured-products__item(linkImage,productName,productPrice,idProduct="",typeProduct="",discount,initialPrice)
+    li(data-id=idProduct ,data-type-product=typeProduct).featured-products__item.col-md-3.col-lg-3
+              .featured-products__image
+                img(src=linkImage alt='')
+                if discount
+                  .discount=discount
+              .featured-products__name=productName
+              .featured-products__price=productPrice
+                if initialPrice
+                  span.initialPrice=initialPrice
+
+//- Section Thiết kế riêng
+mixin custom__item(linkImage,itemName,linkToPage='#0')
+    .col-6.col-md-6.col-lg-4.custom__item
+          .row
+            .design-own__image.col-9.col-sm-6.col-md-7.col-lg-7
+              img(src=linkImage alt='image')
+            .design-own__btn.col-12.col-sm-4.col-md-4.col-lg-4
+              h4=itemName
+              a.bttn-start.bttn.wow.animate__animated.animate__bounceIn.animate__delay-1s(href=linkToPage) Bắt đầu  
+
+//- Section famousPeoples
+
+mixin famousPeople__item(linkImage,famousPeople__name,linkToPage='#0')
+    a.col-md-3.famousPeople(href=linkToPage)
+          .famousPeople__image
+            img(src=linkImage)
+          .famousPeople__name=famousPeople__name
+
+//- Section Collection-news
+
+mixin collection-news__item-row (linkImage,news__title,news__time,linkToPage='#0')
+    .row
+              .col-4.col-sm-4.col-md-3.col-lg-3
+                a.collection-news__item-image(href='#0')
+                  img(src=linkImage alt='Ảnh tin tức')
+              .col-8.col-sm-7.col-md-7.col-lg-7
+                a(href=linkToPage)
+                  .collection-news__item-title=news__title
+                  .article-all-info
+                    .article-date
+                      i.fas.fa-calendar-alt
+                      span=news__time
+mixin footer__icon-item(linkToPage='#0',classIcon1,classIcon2)
+    .footer__icon-item
+        a(href=linkToPage)
+            i(class=classIcon1)
+        i(class=classIcon2)
+
+//- detailPruduct.html
+
+mixin tagImg(linkImage,altImage='Ảnh')
+  .image 
+    img(src=linkImage, alt=altImage)
+
+mixin box-support(linkImage,altImage='Ảnh',text)
+  +tagImg(linkImage,altImage)
+  span=text
+
+//-
+mixin text500(text)
+  span(class="margin-top-bottom-7 fontWeight-500")=text
+
+mixin text600(text)
+  span( class="margin-top-bottom-7 fontWeight-600")=text
+
+  //- Table tr product
+mixin tableTr(linkImage,altImage,product__name,productSize,product__price,id_product="",id_user="")
+  tr(data-id_user=id_user,data-id_product=id_product)
+    td
+      +tagImg(linkImage,altImage)
+    td
+      .product__name=product__name
+      .product__size
+       .product__size-name Size: 
+          span.product__size-number=productSize
+      .product__trademark Thương hiệu : Vluxury
+      .product__cart-mobile 
+        .product__quantity-mobile Số lượng :
+          span.product__quantity-mobile_value 1
+        .product__price=product__price
+        .product__size-name-mobile Size: 
+          span.product__size-number=productSize
+          span.mobile-cart-remove Xóa
+    td 
+      .product__price=product__price
+    td 
+      input(type="text" value="1" name="quantity" class="product__quantity" pattern="[0-9]*" min="0" maxlength="2" required="")
+    td 
+      .product__priceTotalItem
+    td 
+      .cart-remove
+        i(class="fas fa-trash-alt")
+
+//- sản phẩm hiển thị khi người dùng click thanh header
+mixin header-cart-item(linkImage,altImage,product__name,productSize,product__price)
+  .row 
+    .col-3 
+      +tagImg(linkImage,altImage)
+    .col-8
+      .product__name=product__name
+      .product__quantity_header Số lượng :
+        span.product__quantity-number-header 1
+      .product__trademark Thương hiệu : Vluxury
+      .product__size-name Size: 
+        span.product__size-number=productSize
+      .product__price=product__price
+  //- giỏ hàng tren thanh header
+mixin header-cart()
+  a(href="cart.html").cart
+    i.fas.fa-shopping-cart
+    span (
+      span.cart__number-product 0
+      span  )
+//- checkout.html
+
+mixin product-item(linkImage,altImage,product__name,product__size,product__price)
+    .row
+        .col-2.image-container
+            +tagImg(linkImage,altImage)
+            .product_quantity 1
+        .col-6.info-product
+                .product__name=product__name
+                .product__size=product__size
+
+        .col-3.info-price
+             .product__price=product__price
+
+//- pays
+
+mixin pay(linkImage,altImage,payName)
+  label()
+    input(type="radio", name="pay")
+    img(src=linkImage, alt=altImage)
+    .pay-name=payName
+
+//- page news
+
+mixin news-product-item(linkImage,altImage,productName,productPrice)
+  +tagImg(linkImage,altImage)
+  .products__name=productName
+  .products__price=productPrice
+  
+mixin news-Item(linkImage,altImage,newName,news__time,newDescriber)
+  +tagImg(linkImage,altImage)
+  h2.news-item__name=newName
+  .article-date
+    i.fas.fa-calendar-alt
+    span=news__time
+  .news-item__describer=newDescriber
+
+//- categoryProduct.html
+mixin filterItem(filterName)
+  label.label-filter
+    input(type="radio", name="filter")
+    .filterName=filterName
+
+//- section Sản Phẩm nổi bật
+mixin category-products__item(linkImage,productName,productPrice,discountSale="",initialPrice="",idProduct,typeProduct)
+    li(data-id=idProduct,data-type-product=typeProduct).category-products__item.col-6.col-sm-4.col-lg-3.animate__fadeInUp.animate__animated
+              .category-products__image
+                img(src=linkImage alt='')
+                .discount=discountSale
+              p.category-products__name=productName
+              #price
+                .category-products__price=productPrice
+                .initialPrice=initialPrice

@@ -1,0 +1,61 @@
+
+extends layout/layout2
+include blocks/mixins
+block vars
+    -title = 'Áo Vest nam - VLUXURY '
+    -bodyClass = 'home-page'
+    -linkCss='assets/css/categoryProduct.css'
+    -linkScripts='assets/javascript/categoryProduct.js'
+block breadcrumbs
+    +breadcrumbs('ÁO VEST NAM',' Áo Vest nam')
+block content
+    .container 
+        .collections__header
+            .collections__filter 
+                .collections__filter-name
+                    span Bộ lọc
+                        i(class="fas fa-chevron-down")
+                ul.collections__filter-list 
+                    li Khoảng giá
+                        i(class="fas fa-times")
+                    li.collections__filter-item(data-productNumberLte="null",data-productNumberGte="null")
+                        +filterItem('Tất cả')
+                    li.collections__filter-item(data-productNumberLte="500000",data-productNumberGte="null") 
+                        +filterItem('Nhỏ hơn 500,000₫')
+                    li.collections__filter-item(data-productNumberLte="1000000",data-productNumberGte="500000")
+                        +filterItem('Từ 500,000₫ - 1,000,000₫')
+                    li.collections__filter-item(data-productNumberLte="2000000",data-productNumberGte="1000000") 
+                        +filterItem('Từ 1,000,000₫ - 2,000,000₫')
+                    li.collections__filter-item(data-productNumberLte="2500000",data-productNumberGte="2000000")
+                        +filterItem('Từ 2,000,000₫ - 2,500,000₫')
+                    li.collections__filter-item(data-productNumberLte="4000000",data-productNumberGte="2500000") 
+                        +filterItem('Từ 2,500,000₫ - 4,000,000₫')
+                    li.collections__filter-item(data-productNumberLte="null",data-productNumberGte="4000000")
+                        +filterItem('Lớn hơn 4,000,000₫')
+
+            .collections__title#product-list-title ÁO VEST NAM
+            select.collections__sort-product
+                option(value="Tùy chọn") Tùy chọn
+                option(value="Sản phẩm bán chạy") Theo bảng chữ cái từ A-Z
+                option(value="Theo bảng chữ cái từ Z-A") Theo bảng chữ cái từ Z-A
+                option(value="Giá từ thấp tới cao" data-pricesort="min-max") Giá từ thấp tới cao
+                option(value="Giá từ cao tới thấp " data-pricesort="max-min") Giá từ cao tới thấp
+                option(value="Mới nhất") Mới nhất
+                option(value="Cũ nhất") Cũ nhất
+        .collection__content 
+            ul.row#category-products-list
+            div(aria-label="Page navigation example")
+                ul(class="pagination justify-content-center")
+                    li(class="page-item prev-btn" style="display:none")
+                        a(class="page-link" href="#product-list-title") Trước
+                    li(class="page-item")
+                        a(class="page-link page-number activePagination " href="#product-list-title") 1
+                    li(class="page-item")
+                        a(class="page-link page-number" href="#product-list-title") 2
+                    //- li(class="page-item")
+                    //-     a(class="page-link" href="#") 3
+                    li(class="page-item next-btn")
+                        a(class="page-link" href="#product-list-title") Sau
+        template#category_product-item
+            +category-products__item('assets/image/image_home/bst_moi1.png','ÁO VEST GHI KẺ LH69','2,950,000₫')
+        

@@ -1,0 +1,55 @@
+//- footer
+include mixins
+
+footer
+	.row
+		.footer__left.col-md-12.col-lg-8
+			.row
+				.footer__contact.col-sm-4.col-md-4
+					.footer__contact-top
+						.footer__logo VLUXURY
+						.footer__phone-number
+							i.fas.fa-phone-alt
+							a(href='tel:0999996789') 0999996789
+						.footer__email
+							i.fas.fa-envelope
+							a(href='mailto:vluxury@gmail.com') vluxury@gmail.com
+					.footer__contact-bottom
+						img(src='assets/image/image_home/dathongbao.png' alt='Ảnh đã thông báo')
+				.footer__support.col-sm-4.col-md-4
+					h3.footer__title HỖ TRỢ KHÁCH HÀNG
+					ul.footer__support-list
+						li.footer__support-item
+							a(href='#0')  Hướng dẫn mua hàng online
+						li.footer__support-item
+							a(href='#0') Hướng dẫn thanh toán
+						li.footer__support-item
+							a(href='#0')  Tra cứu đơn hàng
+				.footer__policy.col-sm-4.col-md-4
+					h3.footer__title CHÍNH SÁCH
+					ul.footer__policy-list
+						li.footer__policy-item
+							a(href='#0') Tìm kiếm 
+						li.footer__policy-item
+							a(href='#0') Giới thiệu 
+						li.footer__policy-item
+							a(href='#0')  Chính sách đổi trả 
+						li.footer__policy-item
+							a(href='#0')  Chính sách bảo mật 
+						li.footer__policy-item
+							a(href='#0') Điều khoản dịch vụ
+		.footer__right.col-md-12.col-lg-4
+			h3.footer__title.footer__social-title THEO DÕI VLUXURY TRÊN MẠNG XÃ HỘI
+			.footer__icon-social
+				+footer__icon-item('https://www.facebook.com/','fab fa-facebook-f','icon-facebook fab fa-facebook-f')
+				+footer__icon-item('https://www.instagram.com/','fab fa-instagram','icon-instagram fab fa-instagram')
+				+footer__icon-item('https://www.youtube.com/','fab fa-youtube','icon-youtube fab fa-youtube')
+				+footer__icon-item('https://twitter.com/','fab fa-twitter','icon-twitter fab fa-twitter')
+			h3.footer__title.footer__right-title ĐĂNG KÝ NHẬN THÔNG TIN MỚI TỪ VLUXURY
+			form.contact-form(action='')
+				.input-group
+					input#footer__email(type='email' required='' name='email' placeholder='Nhập email của bạn ')
+					input.input-group__btn.wow.animate__animated.animate__bounceIn.animate__delay-1s(type='submit' value='Đăng Kí')
+	.footer_copyright Copyrights &copy; 2021 by LUXURY
+a#btn-back-to-top(href='#back-to-top')
+	i.fa.fa-angle-up

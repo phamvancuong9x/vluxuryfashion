@@ -1,0 +1,45 @@
+extends layout/layout2
+include blocks/mixins
+block vars
+    -title = 'Tin tức thời trang - VLUXURY'
+    -bodyClass = 'home-page'
+    -linkCss='assets/css/news.css'
+    -linkScripts='assets/javascript/news.js'
+block breadcrumbs
+    +breadcrumbs('TIN TỨC THỜI TRANG','Tin tức thời trang')
+block content
+    .container
+        .row 
+            .col-md-3 
+                .sellings-products
+                    h2.sellings-products__title Sản phẩm bán chạy
+                    #news-product-list
+                        +news-product-item('assets/image/image_product-detail/vest/Vest_LH67_2-2.jpg','Ảnh sản phẩm','ÁO VEST  KẺ XANH - 263','2,900,000₫')
+                        +news-product-item('assets/image/image_product-detail/vest/Vest_263_2-3.jpg','Ảnh sản phẩm','ÁO VEST KẺ XANH 263','2,950,000₫')
+                        +news-product-item('assets/image/image_product-detail/vest/Vest_BE_AV_256_2-4.jpg','Ảnh sản phẩm','ÁO VEST  BE AV256','2,950,000₫')
+                        +news-product-item('assets/image/image_product-detail/vest/Vest_Xanh_LH61_2-5.jpg','Ảnh sản phẩm','ÁO VEST  XANH RÊU LH61','2,950,000₫')
+                    a(class="btn-more" href="#0") XEM THÊM
+            .col-md-9 
+                .news-content
+                    h1.news-title TIN TỨC
+                    .row 
+                        .col-sm-6
+                            .news-item 
+                                +news-Item('assets/image/news/tintucmoi1.jpg','Ảnh Tin Tức','TIPS THẮT CÀ VẠT ĐÚNG CHUẨN QUÝ ÔNG LỊCH LÃM','15/01/22','Thắt cà vạt là một trong những kỹ năng cần thiết của chàng trai hiện đại. Cùng Milando tìm hiểu những kiểu thắt cavat phổ biến sau đây nh...')
+                        .col-sm-6
+                            .news-item 
+                                +news-Item('assets/image/news/tintucmoi2.jpg','Ảnh Tin Tức','PHỐI ĐỒ CHUẨN PHONG CÁCH SUIT HÀN – Ý THEO PHIM VINCENZO','15/12/21','Hai đất nước Ý và Hàn Quốc luôn được biết đến là những quốc gia có phong cách Vest ấn tượng. Nam giới ở cả hai đất nước đều có xu hướng t..')
+                    .row 
+                        .col-sm-6
+                            .news-item 
+                                +news-Item('assets/image/news/tintucmoi3.jpg','Ảnh Tin Tức','3 BỘ ĐỒ MÀ CHÀNG TRAI NÊN CÓ TRONG TỦ QUẦN ÁO','15/12/21','Nền tủ quần áo phải hoạt động giống như danh sách mua sắm thực phẩm hàng tuần của bạn. Bạn mua cùng một mặt hàng chủ  lực mỗi khi đến cửa ...')
+                        .col-sm-6
+                            .news-item 
+                                +news-Item('assets/image/news/tintucmoi4.jpg','Ảnh Tin Tức','XU HƯỚNG THỜI TRANG CHO ÁO SƠ MI NAM 2022','05/01/22','Thắt cà vạt là một trong những kỹ năng cần thiết của chàng trai hiện đại. Cùng Milando tìm hiểu những kiểu thắt cavat phổ biến sau đây nh...')
+                    .row 
+                        .col-sm-6
+                            .news-item 
+                                +news-Item('assets/image/news/tintucmoi5.jpg','Ảnh Tin Tức','PHONG CÁC TỰ DO VÀ BỘ ĐỒ ÁO VEST NAM KHÔNG THẮT LƯNG','19/11/21','Với những bạn nam thì chiếc thắt lưng không phải là một phụ kiện thời trang quá xa lạ hay lạ lẫm gì nữa. Chiếc thắt lưng đã khẳng định đư...')
+                        .col-sm-6
+                            .news-item 
+                                +news-Item('assets/image/news/tintucmoi6.jpg','Ảnh Tin Tức','VEST NAM - 5 SỰ KẾT HỢP MÀU SẮC CẦN THIẾT CHO BỘ ĐỒ  MÙA XUÂN','13/09/21','Khi bạn nghe mùa xuân kết hợp phù hợp với màu sắc, bạn có thể mong đợi để tìm thấy một số Bộ áo vest nam màu xanh, Bộ áo vest nam, Bộ áo ...')
