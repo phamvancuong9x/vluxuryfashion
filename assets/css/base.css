@@ -256,6 +256,9 @@ span {
   transition: width 0.3s linear;
   z-index: 10;
 }
+.header__user-item span::after {
+  height: 1px;
+}
 .nav-mobile__center-item p::after,
 .nav-mobile__sub-item a:after {
   background-color: #fff;

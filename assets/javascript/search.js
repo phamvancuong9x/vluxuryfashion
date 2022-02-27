@@ -8,22 +8,19 @@ function getDataAPI() {
     .then((response) => response.json())
     .then((arrayCategoryProduct) => {
       if (arrayCategoryProduct.length == 0) {
-        $("h2").text(
-          `KHÔNG CÓ KẾT QUẢ TÌM KIẾM CHO TỪ KHÓA : \" ${sessionStorage.getItem(
+        console.log(arrayCategoryProduct.length == 0);
+        $("h2").html(
+          `<p>KHÔNG CÓ KẾT QUẢ TÌM KIẾM CHO TỪ KHÓA :<span> \" ${sessionStorage.getItem(
             "keywordSearch"
-          )} \"`
+          )} \"</span> </p> `
         );
-        // $("#noEmpty").addClass("d-none");
-        // console.log(arrayCategoryProduct);
       } else {
         renderProductItem(arrayCategoryProduct, "category-products-list");
-        $("h2").text(
-          `KẾT QUẢ TÌM KIẾM CHO TỪ KHÓA : ${sessionStorage.getItem(
+        $("h2").html(
+          `<p> KẾT QUẢ TÌM KIẾM CHO TỪ KHÓA : <span>\"${sessionStorage.getItem(
             "keywordSearch"
-          )}`
+          )}\"</span></p>`
         );
-        // $("#empty").addClass("d-none");
-        // $("#noEmpty").removeClass("d-none");
       }
     })
     .then(() => {
@@ -90,5 +87,6 @@ function switchToPageDetailProduct() {
 function changeCssSearchPage() {
   $(".container").css("minHeight", "40vh");
   $("#category-products-list").css("justifyContent", "center");
+  $(".collections__header h2").css("textAlign", "center");
 }
 changeCssSearchPage();

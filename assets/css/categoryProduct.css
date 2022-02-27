@@ -232,6 +232,9 @@ input[type="radio"]:checked:after {
     justify-content: space-around;
     align-items: center;
   }
+  .collections__header h2 {
+    font-size: 20px !important;
+  }
 }
 @media (max-width: 360px) {
   #price {
