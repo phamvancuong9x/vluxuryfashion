@@ -191,7 +191,3 @@ function deleteProductAllCart() {
   });
   localStorage.setItem("cart_product", "[]");
 }
-// // set lại trạng thái khi người dùng ko ở trang thiết kế riêng
-setTimeout(() => {
-  sessionStorage.setItem("isStatusDesign", "false");
-}, 500);
