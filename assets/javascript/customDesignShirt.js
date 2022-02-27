@@ -65,14 +65,30 @@ changeBorder(".select-cuff__item .image img");
 
 function saveDateProductDesign() {
   const srcImg = $("#product__image img").attr("src");
-  const sizeProduct = +$("select").val() || "";
+  const sizeProduct = +$("select").val() || "48";
+  const priceProduct = $(".price__product").text();
   const arrayInfoProductDesign = [
     {
       image_product: srcImg,
       size_product: sizeProduct.toString(),
+      quantity_product: "1",
+      name_product: "ÁO SƠ MI RIÊNG",
+      price_product: priceProduct,
     },
   ];
+  sessionStorage.setItem(
+    "arrayInfoProductDesign",
+    JSON.stringify(arrayInfoProductDesign)
+  );
 }
 setTimeout(() => {
   saveDateProductDesign();
 }, 1000);
+
+// hàm kiểm tra ngườ dùng có click vào nút mua ngay trong thiết kế riêng hay không rồi lưu trạng thái vào vào session
+function saveStatusDesign() {
+  $(".btn-buy-design").click(() => {
+    sessionStorage.setItem("isStatusDesign", "true");
+  });
+}
+saveStatusDesign();

@@ -135,12 +135,32 @@ function renderCartProductItem(arrayCategoryProduct, productListClass) {
     productList.appendChild(productItem);
   }
 }
-const arrayProductCart = JSON.parse(getCartProductLocalStore());
-renderCartProductItem(arrayProductCart, ".product-list");
-totalMoneyProduct();
+
+// hàm render ra sản phẩm tùy vào đầu vào
+function renderProduct() {
+  if (sessionStorage.getItem("isStatusDesign") == "false") {
+    const arrayProductCart = JSON.parse(getCartProductLocalStore());
+    renderCartProductItem(arrayProductCart, ".product-list");
+    totalMoneyProduct();
+  } else {
+    renderCartProductItem(getArrayDesignProduct(), ".product-list");
+    $(".information-order__sum-price").html(
+      `Tổng Tiền:  <span>${getArrayDesignProduct()[0].price_product}</span>`
+    );
+  }
+}
+renderProduct();
+
 // hàm lấy data giỏ hàng trong localstore
 function getCartProductLocalStore() {
   return localStorage.getItem("cart_product");
+}
+
+// hàm lấy thông tin sản phẩm design nếu có
+function getArrayDesignProduct() {
+  if (sessionStorage.getItem("isStatusDesign") == "false") return [];
+
+  return JSON.parse(sessionStorage.getItem("arrayInfoProductDesign"));
 }
 
 // hàm láy thông tin người dùng nhập vào render ra đơn hàng thành công
@@ -171,3 +191,7 @@ function deleteProductAllCart() {
   });
   localStorage.setItem("cart_product", "[]");
 }
+// // set lại trạng thái khi người dùng ko ở trang thiết kế riêng
+setTimeout(() => {
+  sessionStorage.setItem("isStatusDesign", "false");
+}, 500);

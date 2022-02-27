@@ -323,3 +323,5 @@ function clickUpdateInfo() {
     modalChangeQuantity();
   });
 }
+// // set lại trạng thái khi người dùng ko ở trang thiết kế riêng
+sessionStorage.setItem("isStatusDesign", "false");

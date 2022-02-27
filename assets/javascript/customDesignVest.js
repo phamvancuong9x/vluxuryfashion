@@ -8,6 +8,7 @@
         "src",
         `assets/image/product_feature/vest/${urlImage}/fit-1.jpg`
       );
+      saveDateProductDesign();
     });
   }
   changeImageProductOfFabric();
@@ -19,6 +20,7 @@
         "src",
         `assets/image/product_feature/vest/${urlImage}/${urlFit}.jpg`
       );
+      saveDateProductDesign();
     });
   }
   changeImageProductOfFit();
@@ -80,8 +82,6 @@ checkedInput();
 
 (function checkChooseSize() {
   $("select").click(function () {
-    console.log($("select")[0].value);
-
     //  }
     if (
       $("select")[0].value != "default" &&
@@ -91,5 +91,36 @@ checkedInput();
     } else {
       $(".select-size .answer").css("backgroundPosition", " right 0px");
     }
+    saveDateProductDesign();
   });
 })();
+// hàm lưu dữ liệu sản phẩm đã chọn vào sessionStorage
+
+function saveDateProductDesign() {
+  const srcImg = $("#product__image img").attr("src");
+  const sizeProduct = +$("select").val() || "48";
+  const priceProduct = $(".price__product").text();
+  const arrayInfoProductDesign = [
+    {
+      image_product: srcImg,
+      size_product: sizeProduct.toString(),
+      quantity_product: "1",
+      name_product: "BỘ VEST RIÊNG",
+      price_product: priceProduct,
+    },
+  ];
+  sessionStorage.setItem(
+    "arrayInfoProductDesign",
+    JSON.stringify(arrayInfoProductDesign)
+  );
+}
+setTimeout(() => {
+  saveDateProductDesign();
+}, 1000);
+// hàm kiểm tra ngườ dùng có click vào nút mua ngay trong thiết kế riêng hay không rồi lưu trạng thái vào vào session
+function saveStatusDesign() {
+  $(".btn-buy-design").click(() => {
+    sessionStorage.setItem("isStatusDesign", "true");
+  });
+}
+saveStatusDesign();

@@ -128,7 +128,7 @@ section.info-ship {
   --bs-gutter-x: 1rem;
 }
 .information-order .image {
-  transform: scale(1.02);
+  /* transform: scale(1.02); */
 }
 .image-container {
   background: #ffffff;
