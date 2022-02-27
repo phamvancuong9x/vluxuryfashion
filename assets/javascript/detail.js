@@ -205,8 +205,6 @@
     $(".modal__btn-close").click(function () {
       $(classModal).fadeOut();
       setTimeout(function () {
-        // $(".modal__cart-table").fadeIn();
-        // $(".modal__checkout-actions").fadeIn();
         $(".modal .cart-empty").css("display", "none");
         showModalContent();
       }, 400);
@@ -226,16 +224,6 @@
     clickToShowModal(".btn__add-to-cart");
     hideModal(".modal");
   }
-
-  // // hàm kiểm tra xem giở hàng còn sản phẩm hay không nếu không còn thì ẩn table và hiện thông báo giỏ hàng trống
-
-  // const isCheckQuantityProductOfCart = function () {
-  //   if ($("tbody tr").length == 0) {
-  //     return false;
-  //   }
-  //   return true;
-  // };
-
   // lhàm lấy danh sách các sản pham tương tu
   function getDataAPI2() {
     const typeProduct = getTypeProduct();
@@ -382,6 +370,7 @@
     )
       .then((response) => response.json())
       .then(async (arrayProduct) => {
+        $("title").text(arrayProduct[0].name_product + " - VLUXURY");
         sessionStorage.setItem("detailProduct", JSON.stringify(arrayProduct));
         await renderProductItem(arrayProduct, "detailProductContent");
         await renderCart();

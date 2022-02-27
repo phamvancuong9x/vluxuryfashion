@@ -102,7 +102,7 @@ const arrayBreadcrumbs = {
   somi: "Áo Sơ Mi Nam",
   quanau: "Quần Âu Nam",
   giay: "Giày Da Nam",
-  phukien: "Phụ kiên",
+  phukien: "Phụ Kiện",
   categoryProductSale: "Sản Phẩm Khuyến Mãi",
 };
 
@@ -111,6 +111,7 @@ function changeElmText(arrayBreadcrumbs, classElm) {
   const typeProduct = getTypeProduct();
   if (!typeProduct) return;
   $(classElm).text(arrayBreadcrumbs[`${typeProduct}`]);
+  $("title").text(arrayBreadcrumbs[`${typeProduct}`] + " - VLUXURY");
 }
 changeElmText(
   arrayBreadcrumbs,

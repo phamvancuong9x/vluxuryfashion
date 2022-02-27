@@ -40,6 +40,9 @@ a {
   display: flex;
   align-items: center;
 }
+.breadcrumbs__linkPage-container {
+  line-height: 24px;
+}
 .breadcrumbs__linkPage-container span:first-child {
   cursor: pointer;
 }

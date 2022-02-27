@@ -45,6 +45,7 @@ img {
 }
 .breadcrumbs__linkPage-container {
   display: flex;
+  line-height: 24px;
 }
 .breadcrumbs__linkPage-container span:last-child {
   font-weight: 500;
