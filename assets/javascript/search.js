@@ -86,3 +86,9 @@ function switchToPageDetailProduct() {
     );
   });
 }
+//thay đổi 1 số css trong trang search
+function changeCssSearchPage() {
+  $(".container").css("minHeight", "40vh");
+  $("#category-products-list").css("justifyContent", "center");
+}
+changeCssSearchPage();

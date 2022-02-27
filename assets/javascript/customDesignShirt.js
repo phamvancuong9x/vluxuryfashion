@@ -65,7 +65,7 @@ changeBorder(".select-cuff__item .image img");
 
 function saveDateProductDesign() {
   const srcImg = $("#product__image img").attr("src");
-  const sizeProduct = +$("select").val() || "48";
+  const sizeProduct = +$("select").val() || "42";
   const priceProduct = $(".price__product").text();
   const arrayInfoProductDesign = [
     {
