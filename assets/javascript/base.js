@@ -152,6 +152,35 @@ function switchSearchPageMobile() {
 }
 switchSearchPageMobile();
 
+// hàm kiểm tra người dùng nhập dữ hiệu hay chưa nếu rồi khi nhấn enter sẽ chuyển sang trang search
+
+function enterToSwitchSearch() {
+  if (!checkValueNavInputMobile() && !checkValueNavInput()) return;
+  $(document).keypress(function (event) {
+    const charCode = event.charCode ? event.charCode : event.which;
+    if (charCode == "13") {
+      sessionStorage.setItem("keywordSearch", `${getNavInputSearch.val()}`);
+      window.location.assign(
+        `search.html?title_like=${getNavInputSearch.val()}`
+      );
+    }
+  });
+}
+function enterToSwitchSearchMobile() {
+  if (!checkValueNavInputMobile() && !checkValueNavInput()) return;
+  $(document).keypress(function (event) {
+    const charCode = event.charCode ? event.charCode : event.which;
+    if (charCode == "13") {
+      sessionStorage.setItem(
+        "keywordSearch",
+        `${getNavInputSearchMobile.val()}`
+      );
+      window.location.assign(
+        `search.html?title_like=${getNavInputSearchMobile.val()}`
+      );
+    }
+  });
+}
 // hàm ngăn chặn hành vi mặc định khi bắt đầu click chuột vào thẻ a nhưng chưa nhả ra;
 //  có tác dụng không làm mất đi focus ở thẻ input
 function stopPreventDefaultMousedownNavlinkSearch() {

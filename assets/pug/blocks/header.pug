@@ -66,7 +66,7 @@ header
 						| Tìm kiếm
 						i.fas.fa-search
 					.nav__search
-						input#nav__input-search.nav__input(type='text' placeholder='Tìm sản phẩm...')
+						input#nav__input-search.nav__input(type='text' placeholder='Tìm sản phẩm...' oninput="enterToSwitchSearch()")
 						a.nav__link-search(href='search.html')
 							i.fas.fa-search
 			li.nav__right-item.header__cart
@@ -107,7 +107,7 @@ header
 					span Menu
 					i.fas.fa-times
 				label.nav-mobile__search(for='nav-mobile__input-search')
-					input#nav-mobile__input-search.nav-mobile__input( type='text' placeholder='Tìm sản phẩm...')
+					input#nav-mobile__input-search.nav-mobile__input( type='text' placeholder='Tìm sản phẩm...' oninput="enterToSwitchSearchMobile()")
 					a.nav-mobile__link-search(style='display: block')
 						i.fas.fa-search
 				ul.nav-mobile__center-list

@@ -181,6 +181,7 @@ renderInfoOrder();
 // hàm click vào nút đặt hàng thì xóa sản phẩm trong giỏ hàng
 function deleteProductAllCart() {
   const id_user = localStorage.getItem("id");
+  localStorage.setItem("cart_product", "[]");
   if (!id_user) return;
   fetch(`https://api-json-sever.herokuapp.com/api/account/${id_user}`, {
     method: "PATCH",
@@ -189,5 +190,4 @@ function deleteProductAllCart() {
       cart: `[]`,
     }),
   });
-  localStorage.setItem("cart_product", "[]");
 }

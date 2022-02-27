@@ -84,7 +84,7 @@
               <label for="nav__input-search">
                 <div class="nav__search-title">Tìm kiếm<i class="fas fa-search"></i></div>
                 <div class="nav__search">
-                  <input class="nav__input" id="nav__input-search" type="text" placeholder="Tìm sản phẩm..."><a class="nav__link-search" href="search.html"><i class="fas fa-search"></i></a>
+                  <input class="nav__input" id="nav__input-search" type="text" placeholder="Tìm sản phẩm..." oninput="enterToSwitchSearch()"><a class="nav__link-search" href="search.html"><i class="fas fa-search"></i></a>
                 </div>
               </label>
             </li>
@@ -118,7 +118,7 @@
             <div class="menu-bars-container">
               <div class="menu-bars__close"><span>Menu</span><i class="fas fa-times"></i></div>
               <label class="nav-mobile__search" for="nav-mobile__input-search">
-                <input class="nav-mobile__input" id="nav-mobile__input-search" type="text" placeholder="Tìm sản phẩm..."><a class="nav-mobile__link-search" style="display: block"><i class="fas fa-search"></i></a>
+                <input class="nav-mobile__input" id="nav-mobile__input-search" type="text" placeholder="Tìm sản phẩm..." oninput="enterToSwitchSearchMobile()"><a class="nav-mobile__link-search" style="display: block"><i class="fas fa-search"></i></a>
               </label>
               <ul class="nav-mobile__center-list">
                 <li class="nav-mobile__center-item typeProduct" data-type-product="categoryProductSale" data-is-sale="true">Khuyến Mãi </li>
