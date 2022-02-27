@@ -1055,6 +1055,9 @@ div[class="featured-products__list"]::after {
     display: flex;
     justify-content: space-evenly;
   }
+  .famousPeople__image::before {
+    background-color: transparent;
+  }
 }
 @media (max-width: 413px) {
   .banner__time {
