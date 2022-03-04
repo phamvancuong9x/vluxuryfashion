@@ -191,3 +191,32 @@ function deleteProductAllCart() {
     }),
   });
 }
+
+// Xử lý thông tin nếu người dùng dã dăng nhập
+
+// hàm kiểm tra người dùng đã đăng nhập chưa
+function checkLogin() {
+  const userId = localStorage.getItem("id");
+  if (userId) {
+    return true;
+  }
+  return false;
+}
+// hàm hiển lấy tên người dung nếu đã đăng nhập và ẩn link dẫn đến trang đăng nhập
+function getNameUser() {
+  if (!checkLogin()) return;
+  const nameUser = localStorage.getItem("name");
+  if (!nameUser) return;
+  $(".linkToLoginPage").css("display", "none");
+  $("#name").val(nameUser);
+}
+getNameUser();
+// hàm lấy các thông tin email từ phần thông tin cá nhân của người dùng
+function getInfoUser(value, id) {
+  if (!checkLogin()) return;
+  const dataUser = localStorage.getItem(value);
+  if (!dataUser) return;
+  $(id).val(dataUser);
+}
+getInfoUser("email", "#email");
+getInfoUser("phone", "#phone-number");
