@@ -209,15 +209,15 @@ function showSubMenuNav() {
 }
 showSubMenuNav();
 
+// hiển thị subMobile user
 function showSubMenuNavUser() {
   $(".header-mobile__user-content i").click(function () {
-    console.log($(this).parent().next());
     if ($(this).parent().next().css("height") == "0px") {
       $(this).parent().next().css("height", "132px");
-      $(this).parent().parent().removeClass("nav-mobile__parent-menu-iconPlus");
+      $(this).parent().parent().removeClass("header-user-container");
     } else {
       $(this).parent().next().css("height", "0px");
-      $(this).parent().parent().addClass("nav-mobile__parent-menu-iconPlus");
+      $(this).parent().parent().addClass("header-user-container");
     }
   });
 }

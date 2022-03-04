@@ -617,7 +617,7 @@ span {
   padding: 0 38px;
   cursor: pointer;
 }
-.header-mobile__user-content i::after {
+.header-user-container i::after {
   position: absolute;
   top: calc(50% - 0.6px);
   left: calc(50% - 6.7px);
