@@ -1,4 +1,7 @@
 @import url("base.css");
+.breadcrumbs__linkPage-container span:nth-child(2) {
+  font-weight: 500;
+}
 .container {
   background-color: #fff;
   display: flex;

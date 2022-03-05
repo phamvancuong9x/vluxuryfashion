@@ -3,6 +3,9 @@
   max-width: 1159px;
   margin-top: 60px;
 }
+.breadcrumbs__linkPage-container span:nth-child(2) {
+  font-weight: 500;
+}
 h1,
 .sellings-products__title {
   font-size: 26px;

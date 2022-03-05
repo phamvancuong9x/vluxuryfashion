@@ -2,6 +2,9 @@
 label {
   display: block;
 }
+.breadcrumbs__linkPage-container span:nth-child(2) {
+  font-weight: 500;
+}
 .link-home-input {
   width: 100%;
 }
