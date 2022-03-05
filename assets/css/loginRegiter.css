@@ -196,10 +196,18 @@ label {
   justify-content: space-between;
   flex-direction: row-reverse;
 }
-.back-to-home,
-.forget-password {
+.back-to-home {
   display: flex;
   justify-content: center;
+}
+#password-login {
+  margin-bottom: 0;
+}
+.forget-password {
+  padding: 10px 0px 20px;
+}
+.link-convert-html {
+  font-weight: 500;
 }
 .social__item {
   display: flex;
