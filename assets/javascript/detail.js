@@ -192,6 +192,7 @@
   // hàm hiển thì modal khi người dùng click vào nút Thêm vào giở hàng
   const clickToShowModal = function (classBtnClick) {
     $(classBtnClick).click(function () {
+      if ($("classBtnClick").text().trim() == "Mua ngay") return;
       showModal(".modal");
     });
   };
