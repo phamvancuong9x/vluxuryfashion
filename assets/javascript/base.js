@@ -341,3 +341,11 @@ showQuantityProductOfCart();
 //   }
 // }
 // createId();
+
+// hàm ẩn thẻ span trong breackcrumb
+function hideSpanBreadcrumbs() {
+  if ($(".breadcrumbs__linkPage-container >span:nth-child(3)").text() == "") {
+    $(".breadcrumbs__linkPage-container >span:nth-child(3)").remove();
+  }
+}
+hideSpanBreadcrumbs();
