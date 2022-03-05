@@ -51,6 +51,7 @@ ul {
 li {
   list-style-type: none;
 }
+
 /*initialPrice  */
 .featured-products__image {
   position: relative;
@@ -229,7 +230,8 @@ span {
 }
 /* hiệu ứng hover gạch chân */
 .nav__sub-item p,
-.nav-mobile__sub-item a {
+.nav-mobile__sub-item a,
+.breadcrumbs__linkPage-container > span:not(:last-child) {
   position: relative;
   top: 0;
   left: 0;
@@ -245,7 +247,8 @@ span {
 .breadcrumb__link-home::after,
 .nav-mobile__center-item p::after,
 .nav-mobile__sub-item p:after,
-.nav-mobile__sub-item a:after {
+.nav-mobile__sub-item a:after,
+.breadcrumbs__linkPage-container > span:not(:last-child)::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -287,7 +290,8 @@ span {
 .breadcrumb__link-home:hover::after,
 .header__user:hover::after,
 .nav-mobile__sub-item p:hover::after,
-.nav-mobile__sub-item a:hover::after {
+.nav-mobile__sub-item a:hover::after,
+.breadcrumbs__linkPage-container > span:not(:last-child):hover::after {
   width: 100%;
   will-change: width;
 }
@@ -1156,7 +1160,7 @@ footer > .row {
   align-items: center;
 }
 .breadcrumbs__linkPage span {
-  padding-left: 5px;
+  margin-left: 5px;
 }
 .breadcrumbs__linkPage a > span:last-child {
   color: #000;
