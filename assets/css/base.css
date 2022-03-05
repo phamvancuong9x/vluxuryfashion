@@ -211,19 +211,20 @@ nav {
 
 .nav__center-item,
 .nav__search {
-  padding: 10px 12px;
+  margin: 10px 12px;
   position: relative;
   cursor: pointer;
 }
 .nav__right-item,
-.nav-mobile__center-item {
+.nav__search-title,
+.nav__search-title .nav-mobile__center-item {
   position: relative;
   cursor: pointer;
 }
 
 .nav__right-item > a {
   display: inline-block;
-  padding: 10px 15px;
+  margin: 10px 15px;
 }
 span {
   display: inline-block;
@@ -240,7 +241,8 @@ span {
   display: inline-block;
 }
 .nav__center-item::after,
-.nav__right-item::after,
+.cart::after,
+.nav__search-title::after,
 .nav__sub-item a::after,
 .nav__sub-item p::after,
 .header__user-item span::after,
@@ -268,14 +270,14 @@ span {
   left: 25px;
   bottom: 10px;
 }
-.nav__right-item::after,
+/* .nav__right-item::after,
 .nav__center-item::after {
   left: 15px;
 }
 .nav__center-item:hover::after,
 .nav__right-item:hover::after {
   left: 15px;
-}
+} */
 /* fix loi boder phần tử thứ 5 của menu con nhỏ hơn mà chưa tìm dc lỗi */
 .nav__sub-item:nth-child(5) p::after {
   height: 2px;
@@ -283,7 +285,8 @@ span {
 
 /*  */
 .nav__center-item:hover::after,
-.nav__right-item:hover::after,
+.cart:hover::after,
+.nav__search-title:hover::after,
 .nav__sub-item:hover a::after,
 .nav__sub-item:hover p::after,
 .header__user-item:hover span::after,
@@ -298,11 +301,11 @@ span {
 .nav__search:hover:after {
   width: 0;
 }
-.nav__center-item:hover::after,
+/* .nav__center-item:hover::after,
 .nav__right-item:hover::after,
 .nav-mobile__center-item a:hover::after {
   width: calc(100% - 30px);
-}
+} */
 .nav-mobile__sub-item p:hover::after,
 .nav-mobile__sub-item a:hover::after {
   width: calc(100% - 50px);
@@ -320,7 +323,7 @@ span {
 }
 
 .nav__search-title {
-  padding: 10px 15px;
+  margin: 10px 15px;
   cursor: pointer;
 }
 .nav__search-title i {
@@ -388,7 +391,9 @@ span {
 }
 /* cart */
 .cart {
-  padding: 15px 20px;
+  position: relative;
+  top: 0;
+  left: 0;
   cursor: pointer;
 }
 .cart span {
