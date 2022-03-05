@@ -192,7 +192,6 @@
   // hàm hiển thì modal khi người dùng click vào nút Thêm vào giở hàng
   const clickToShowModal = function (classBtnClick) {
     $(classBtnClick).click(function () {
-      if ($("classBtnClick").text().trim() == "Mua ngay") return;
       showModal(".modal");
     });
   };
@@ -222,7 +221,7 @@
     link("tab", "tab-describe", "tab1", "tab1-content");
     link("tab", "tab-describe", "tab2", "tab2-content");
     tabSlider("#tab1-content .row");
-    clickToShowModal(".btn__add-to-cart");
+    clickToShowModal(".showModal");
     hideModal(".modal");
   }
   // lhàm lấy danh sách các sản pham tương tu
