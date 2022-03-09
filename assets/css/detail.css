@@ -214,7 +214,8 @@ section.detailProduct {
   padding: 5px 35px;
   text-align: center;
 }
-.icon-minus {
+.icon-minus,
+.icon-minus-modal {
   padding: 1px 10px;
   height: 100%;
   position: absolute;
@@ -226,8 +227,10 @@ section.detailProduct {
   justify-content: center;
   align-items: center;
   transition: linear 0.1s;
+  cursor: pointer;
 }
-.icon-plus {
+.icon-plus,
+.icon-plus-modal {
   background-clip: content-box;
   display: flex;
   justify-content: center;
@@ -240,6 +243,7 @@ section.detailProduct {
   right: 0;
   border-left: 1px solid #afafaf;
   transition: linear 0.1s;
+  cursor: pointer;
 }
 .icon-plus:hover {
   color: #fbb416;
@@ -515,10 +519,16 @@ td {
   width: 100%;
   padding: 8px 10px;
 }
+tr td:nth-child(4) {
+  position: relative;
+  text-align: center !important;
+}
+
 tr td:nth-child(4) input {
   border: 1px solid #cecaca;
   box-sizing: border-box;
   border-radius: 4px;
+  text-align: center;
 }
 tr th:nth-child(2),
 tr td:nth-child(2) {

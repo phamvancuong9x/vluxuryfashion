@@ -107,7 +107,12 @@ mixin tableTr(linkImage,altImage,product__name,productSize,product__price,id_pro
     td 
       .product__price=product__price
     td 
-      input(type="text" value="1" name="quantity" class="product__quantity" pattern="[0-9]*" min="0" maxlength="2" required="")
+      .detailProduct__quantity-input
+        input(type="text" value="1" name="quantity" class="product__quantity" pattern="[0-9]*" min="0" maxlength="2" required="")
+        span.icon-minus-modal.icon-quantity-modal 
+            i(class="fas fa-minus")
+        span.icon-plus-modal.icon-quantity-modal 
+            i(class="fas fa-plus")
     td 
       .product__priceTotalItem
     td 

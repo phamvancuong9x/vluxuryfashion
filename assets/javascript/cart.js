@@ -243,6 +243,7 @@
   const arrayProductCart = JSON.parse(getCartProductLocalStore());
   renderCartProductItem(arrayProductCart, "product-cart-list");
   setTimeout(() => {
+    changeQuantityModal();
     deleteProduct(".cart-remove");
     deleteProduct(".mobile-cart-remove");
     clickUpdateInfo();
@@ -252,7 +253,7 @@
   function changePriceTotalProductItem() {
     const getElmInputQuantity = $(".product__quantity");
     getElmInputQuantity.mouseover(function () {
-      const ElmProductItem = this.parentElement.parentElement;
+      const ElmProductItem = this.parentElement.parentElement.parentElement;
       $(this).focusout(function () {
         const ElmQuantity = ElmProductItem.querySelector(".product__quantity");
         const ElmPrice = ElmProductItem.querySelector(".product__price");
@@ -275,6 +276,71 @@
         ElmPriceTotalItem.textContent = showTotalItemProduct;
         totalMoneyProduct();
       });
+    });
+  }
+  // hàm hover cho nút giảm số lương minus
+  const hoverMinus = function () {
+    const ElmInputQuantity = $("#quantity");
+    $(".icon-minus").hover(
+      function () {
+        if (+ElmInputQuantity.val() > 1) {
+          $(this).css("color", "#fbb416");
+        }
+      },
+      function () {
+        if (+ElmInputQuantity.val() > 1) {
+          $(this).css("color", "#212529");
+        }
+      }
+    );
+  };
+  // hàm kiểm tra nếu giá trị của input<=1 thì sẽ đổi màu icon minus
+
+  const checkValAndChangeColor = function () {
+    const ElmInputQuantity = $("#quantity");
+    if (+ElmInputQuantity.val() <= 1) {
+      $(".icon-minus").css("color", "#888").css("cursor", "unset");
+    } else {
+      $(".icon-minus").css("color", "#212529").css("cursor", "pointer");
+    }
+  };
+  // hàm thay đổi số lượng sản phẩm trong modal khi ngường dùng nhấn vào phấm tăng giảm
+  function changeQuantityModal() {
+    $("table .icon-quantity-modal").click(function () {
+      console.log($(this));
+      let ElmInputQuantityCart = $(this).parent().children().first();
+      let valueCurrentInput = +ElmInputQuantityCart.val();
+      if (
+        $(this).hasClass("icon-minus-modal") == true &&
+        valueCurrentInput == 1
+      ) {
+        return;
+      } else if ($(this).hasClass("icon-minus-modal") == true) {
+        ElmInputQuantityCart.val(`${valueCurrentInput - 1}`);
+      } else {
+        ElmInputQuantityCart.val(`${valueCurrentInput + 1}`);
+      }
+      hoverMinus();
+      checkValAndChangeColor();
+      // tinh lại thành tiền của mỗi sản phẩm
+      const ElmProductItem = this.parentElement.parentElement.parentElement;
+      const ElmQuantity = ElmProductItem.querySelector(".product__quantity");
+      const ElmPrice = ElmProductItem.querySelector(".product__price");
+      const ElmPriceTotalItem = ElmProductItem.querySelector(
+        ".product__priceTotalItem"
+      );
+      const valuePriceNumber = +ElmPrice.textContent
+        .slice(
+          0,
+          ElmProductItem.querySelector(".product__price").textContent.length - 1
+        )
+        .replaceAll(",", "");
+
+      const showTotalItemProduct = stringToNumberMoney(
+        +ElmQuantity.value * +valuePriceNumber
+      );
+      ElmPriceTotalItem.textContent = showTotalItemProduct;
+      totalMoneyProduct();
     });
   }
   // hàm tính tổng tiền cần thanh toán

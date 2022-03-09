@@ -43,16 +43,13 @@
         return;
       } else if ($(this).hasClass("icon-minus") == true) {
         ElmInputQuantity.val(`${valueCurrentInput - 1}`);
-        hoverMinus();
-        checkValAndChangeColor();
       } else {
         ElmInputQuantity.val(`${valueCurrentInput + 1}`);
-        hoverMinus();
-        checkValAndChangeColor();
       }
+      hoverMinus();
       renderCart();
+      checkValAndChangeColor();
       setTimeout(() => {
-        console.log(1);
         deleteProduct(".cart-remove");
         deleteProduct(".mobile-cart-remove");
         totalMoneyProduct();
@@ -60,6 +57,46 @@
     });
   };
 
+  // hàm thay đổi số lượng sản phẩm trong modal khi ngường dùng nhấn vào phấm tăng giảm
+
+  function changeQuantityModal() {
+    $("table .icon-quantity-modal").click(function () {
+      console.log($(this));
+      let ElmInputQuantityCart = $(this).parent().children().first();
+      let valueCurrentInput = +ElmInputQuantityCart.val();
+      if (
+        $(this).hasClass("icon-minus-modal") == true &&
+        valueCurrentInput == 1
+      ) {
+        return;
+      } else if ($(this).hasClass("icon-minus-modal") == true) {
+        ElmInputQuantityCart.val(`${valueCurrentInput - 1}`);
+      } else {
+        ElmInputQuantityCart.val(`${valueCurrentInput + 1}`);
+      }
+      hoverMinus();
+      checkValAndChangeColor();
+      // tinh lại thành tiền của mỗi sản phẩm
+      const ElmProductItem = this.parentElement.parentElement.parentElement;
+      const ElmQuantity = ElmProductItem.querySelector(".product__quantity");
+      const ElmPrice = ElmProductItem.querySelector(".product__price");
+      const ElmPriceTotalItem = ElmProductItem.querySelector(
+        ".product__priceTotalItem"
+      );
+      const valuePriceNumber = +ElmPrice.textContent
+        .slice(
+          0,
+          ElmProductItem.querySelector(".product__price").textContent.length - 1
+        )
+        .replaceAll(",", "");
+
+      const showTotalItemProduct = stringToNumberMoney(
+        +ElmQuantity.value * +valuePriceNumber
+      );
+      ElmPriceTotalItem.textContent = showTotalItemProduct;
+      totalMoneyProduct();
+    });
+  }
   // hàm kiêm tra giá trị số lưởng sản phẩm người dùng nhập vào có đúng không. nếu không đúng thì xóa kí tự đó đi
   function checkQuantity(SelectorQuantityInput, isCheckPositionInput = true) {
     const ElmInputQuantity = document.querySelectorAll(SelectorQuantityInput);
@@ -682,10 +719,10 @@
   }
 
   // render sản phẩm có sẳn trong giỏ hàng trên sever
-  async function renderCart() {
-    console.log(createArrayCartRender());
-    await renderCartProductItem(createArrayCartRender(), "product-cart-list");
+  function renderCart() {
+    renderCartProductItem(createArrayCartRender(), "product-cart-list");
     changePriceTotalProductItem();
+    changeQuantityModal();
     setTimeout(() => {
       clickAddtocart();
     }, 300);
@@ -694,7 +731,7 @@
   function changePriceTotalProductItem() {
     const getElmInputQuantity = $(".product__quantity");
     getElmInputQuantity.mouseover(function () {
-      const ElmProductItem = this.parentElement.parentElement;
+      const ElmProductItem = this.parentElement.parentElement.parentElement;
       this.focusout = function () {
         const ElmQuantity = ElmProductItem.querySelector(".product__quantity");
         const ElmPrice = ElmProductItem.querySelector(".product__price");
