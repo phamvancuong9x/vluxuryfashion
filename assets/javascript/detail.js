@@ -58,7 +58,6 @@
   };
 
   // hàm thay đổi số lượng sản phẩm trong modal khi ngường dùng nhấn vào phấm tăng giảm
-
   function changeQuantityModal() {
     $("table .icon-quantity-modal").click(function () {
       console.log($(this));
