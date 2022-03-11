@@ -60,7 +60,6 @@
   // hàm thay đổi số lượng sản phẩm trong modal khi ngường dùng nhấn vào phấm tăng giảm
   function changeQuantityModal() {
     $("table .icon-quantity-modal").click(function () {
-      console.log($(this));
       let ElmInputQuantityCart = $(this).parent().children().first();
       let valueCurrentInput = +ElmInputQuantityCart.val();
       if (
@@ -582,7 +581,6 @@
     const valuePriceNumber = +product.price_product
       .slice(0, product.price_product.length - 1)
       .replaceAll(",", "");
-    // console.log(["money", valuePriceNumber]);
     const showTotalItemProduct = stringToNumberMoney(
       +product.quantity_product * +valuePriceNumber
     );
@@ -617,7 +615,6 @@
 
   // hàm render ra danh sách sản phẩm trong gio hang
   function renderCartProductItem(arrayCategoryProduct, productListId) {
-    console.log(arrayCategoryProduct);
     if (
       !Array.isArray(arrayCategoryProduct) ||
       arrayCategoryProduct.length === 0
@@ -639,8 +636,6 @@
     fetch(`https://api-json-sever.herokuapp.com/api/account/${id_user}`)
       .then((response) => response.json())
       .then((objProductCart) => {
-        console.log(objProductCart?.cart.length);
-
         if (objProductCart?.cart.length == 0) {
           localStorage.setItem("cart_product", "[]");
         } else {
@@ -800,6 +795,7 @@
   }
   // hàm click vào nút add-to-cart
   function clickAddtocart() {
+    $(".modal .quantityProductOfCart").text($("tbody tr").length);
     $(".btn__add-to-cart").click(() => {
       if (arrayCartRender.length != 0) {
         $(".quantityProductOfCart").text(`${arrayCartRender.length}`);
@@ -891,7 +887,6 @@ function hideModalCartEmpty() {
 }
 // hàm hiện phần modal_content khi giỏ hàng trống
 function showModalCartEmpty() {
-  console.log(1);
   $(".cart-empty").css("display", "block");
 }
 
