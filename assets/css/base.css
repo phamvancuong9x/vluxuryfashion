@@ -1261,6 +1261,9 @@ footer > .row {
   .initialPrice {
     margin-left: 2px;
   }
+  .cart {
+    /* left: 10px; */
+  }
 }
 @media (max-width: 365px) {
   .breadcrumbs__linkPage {

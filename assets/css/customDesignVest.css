@@ -3,6 +3,7 @@
   font-weight: 500;
 }
 .container {
+  overflow: hidden;
   background-color: #fff;
   display: flex;
   justify-content: center;
