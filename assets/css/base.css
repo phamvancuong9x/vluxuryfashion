@@ -242,6 +242,7 @@ span {
 }
 .nav__center-item::after,
 .cart::after,
+.user-login::after,
 .nav__search-title::after,
 .nav__sub-item a::after,
 .nav__sub-item p::after,
@@ -286,6 +287,7 @@ span {
 /*  */
 .nav__center-item:hover::after,
 .cart:hover::after,
+.user-login:hover::after,
 .nav__search-title:hover::after,
 .nav__sub-item:hover a::after,
 .nav__sub-item:hover p::after,
@@ -390,7 +392,8 @@ span {
   background-color: rgb(0, 0, 0) !important;
 }
 /* cart */
-.cart {
+.cart,
+.user-login {
   position: relative;
   top: 0;
   left: 0;
