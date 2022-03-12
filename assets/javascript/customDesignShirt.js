@@ -81,10 +81,6 @@ function saveDateProductDesign() {
     JSON.stringify(arrayInfoProductDesign)
   );
 }
-// setTimeout(() => {
-//   saveDateProductDesign();
-// }, 1000);
-
 // hàm kiểm tra ngườ dùng có click vào nút mua ngay trong thiết kế riêng hay không rồi lưu trạng thái vào vào session
 function saveStatusDesign() {
   $(".btn-buy-design").click(() => {
