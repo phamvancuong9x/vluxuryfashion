@@ -1,4 +1,32 @@
 {
+  // hàm sử dụng thư viện 3d xem anh 360 độ
+  let fabricHeight = "422px";
+  let fitHeight = "360px";
+  let waistcoatHeight = "210px";
+  let trousersHeight = "212px";
+  let selectHeight = "50px";
+  if (window.matchMedia && window.matchMedia("(max-width: 415px)").matches) {
+    fabricHeight = "378px";
+    fitHeight = "324px";
+    waistcoatHeight = "180px";
+    trousersHeight = "210px";
+    selectHeight = "50px";
+  }
+  if (window.matchMedia && window.matchMedia("(max-width: 380px)").matches) {
+    fabricHeight = "336px";
+    fitHeight = "288px";
+    waistcoatHeight = "180px";
+    trousersHeight = "212px";
+    selectHeight = "50px";
+  }
+  if (window.matchMedia && window.matchMedia("(max-width: 321px)").matches) {
+    fabricHeight = "282px";
+    fitHeight = "240px";
+    waistcoatHeight = "180px";
+    trousersHeight = "212px";
+    selectHeight = "50px";
+  }
+
   // hàm thay đổi ảnh sản phẩm khi click vào loại vải
   let urlImage = "vest-1";
   function changeImageProductOfFabric() {
@@ -31,15 +59,15 @@
       if ($(this).next().css("height") == "0px") {
         $(".select__list").css("height", "0");
         if ($(this).hasClass("select-fabric__title")) {
-          $(this).next().css("height", "422px");
+          $(this).next().css("height", `${fabricHeight}`);
         } else if ($(this).hasClass("select-fit__title")) {
-          $(this).next().css("height", "360px");
+          $(this).next().css("height", `${fitHeight}`);
         } else if ($(this).hasClass("select-waistcoat__title")) {
-          $(this).next().css("height", "210px");
+          $(this).next().css("height", `${waistcoatHeight}`);
         } else if ($(this).hasClass("select-trousers__title")) {
-          $(this).next().css("height", "212px");
+          $(this).next().css("height", `${trousersHeight}`);
         } else {
-          $(this).next().css("height", "50px");
+          $(this).next().css("height", `${selectHeight}`);
         }
         $(this).removeClass("iconPlus");
       } else {
