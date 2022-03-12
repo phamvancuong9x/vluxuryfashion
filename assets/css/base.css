@@ -703,6 +703,9 @@ span {
   transform-origin: top left;
   border-radius: 3px;
 }
+.nav__parent-menu:hover .nav__sub-menu {
+  margin-top: 7px;
+}
 .nav__parent-menu:hover .nav__sub-menu,
 .header__user:hover .header__user-list {
   opacity: 1;
