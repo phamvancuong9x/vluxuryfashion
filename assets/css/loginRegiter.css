@@ -42,6 +42,7 @@ label {
 }
 .content__title h1 {
   font-size: 28px;
+  text-transform: uppercase;
 }
 .input-password,
 .input-password-confirm,
