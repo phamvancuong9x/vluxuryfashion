@@ -7,8 +7,14 @@
   if (window.matchMedia && window.matchMedia("(max-width: 415px)").matches) {
     fabricHeight = "377px";
     fitHeight = "160px";
-    collarHeight = "75px";
-    cuffHeight = "68px";
+    collarHeight = "92px";
+    cuffHeight = "84px";
+  }
+  if (window.matchMedia && window.matchMedia("(max-width: 380px)").matches) {
+    fabricHeight = "340px";
+    fitHeight = "150px";
+    collarHeight = "88px";
+    cuffHeight = "82px";
   }
   if (window.matchMedia && window.matchMedia("(max-width: 321px)").matches) {
     fabricHeight = "288px";
