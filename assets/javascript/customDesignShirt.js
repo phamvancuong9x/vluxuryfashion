@@ -15,12 +15,12 @@
 function changeImageProduct() {
   $(".select-fabric__item").click(function () {
     const fileImage = this.dataset.shirt;
-    console.log(fileImage);
     $("#product__image").vc3dEye({
       imagePath: `assets/image/product_feature/So_mi/${fileImage}/`,
       totalImages: 24,
       imageExtension: "png",
     });
+    saveDateProductDesign();
   });
 }
 changeImageProduct();
@@ -81,9 +81,9 @@ function saveDateProductDesign() {
     JSON.stringify(arrayInfoProductDesign)
   );
 }
-setTimeout(() => {
-  saveDateProductDesign();
-}, 1000);
+// setTimeout(() => {
+//   saveDateProductDesign();
+// }, 1000);
 
 // hàm kiểm tra ngườ dùng có click vào nút mua ngay trong thiết kế riêng hay không rồi lưu trạng thái vào vào session
 function saveStatusDesign() {
@@ -92,3 +92,11 @@ function saveStatusDesign() {
   });
 }
 saveStatusDesign();
+// hàm lưu lại size áo khi người dùng lựa chọn
+
+function saveSize() {
+  $("select").click(() => {
+    saveDateProductDesign();
+  });
+}
+saveSize();
