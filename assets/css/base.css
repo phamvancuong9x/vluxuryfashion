@@ -1262,7 +1262,7 @@ footer > .row {
     margin-left: 2px;
   }
   .cart {
-    /* left: 10px; */
+    left: 10px;
   }
 }
 @media (max-width: 365px) {
