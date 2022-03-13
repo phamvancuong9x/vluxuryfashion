@@ -270,7 +270,6 @@
     hoverMinus();
     link("tab", "tab-describe", "tab1", "tab1-content");
     link("tab", "tab-describe", "tab2", "tab2-content");
-    tabSlider("#tab1-content .row");
     clickToShowModal(".showModal");
     hideModal(".modal");
   }
@@ -285,10 +284,9 @@
       .then((arrayProduct) => {
         renderSimilarProductItem(arrayProduct, "similarProduct__list");
         switchToPageDetailProduct();
-        // main();
         setTimeout(() => {
-          main();
-        }, 1000);
+          tabSlider("#tab1-content .row");
+        }, 200);
       });
   }
   // hàm lấy id sản phẩm muốn render ra
@@ -432,6 +430,9 @@
         totalMoneyProduct();
         setTimeout(() => {
           getDataAPI2();
+        }, 200);
+        setTimeout(() => {
+          main();
         }, 500);
         saveBuyNow();
       });
