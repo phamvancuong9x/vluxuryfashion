@@ -1250,6 +1250,10 @@ footer > .row {
   .breadcrumbs__linkPage i {
     padding-bottom: 3px;
   }
+  .footer__support,
+  .footer__contact {
+    padding-bottom: 0;
+  }
 }
 @media (max-width: 479px) {
   .breadcrumbs__content {
