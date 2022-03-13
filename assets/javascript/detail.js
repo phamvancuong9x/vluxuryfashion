@@ -420,15 +420,14 @@
       `https://api-json-sever.herokuapp.com/api/categoryProduct?id=${idProduct}`
     )
       .then((response) => response.json())
-      .then(async (arrayProduct) => {
+      .then((arrayProduct) => {
         $("title").text(arrayProduct[0].name_product + " - VLUXURY");
         sessionStorage.setItem("detailProduct", JSON.stringify(arrayProduct));
-        await renderProductItem(arrayProduct, "detailProductContent");
-        await renderCart();
+        renderProductItem(arrayProduct, "detailProductContent");
+        renderCart();
         deleteProduct(".cart-remove");
         deleteProduct(".mobile-cart-remove");
         totalMoneyProduct();
-        getDataAPI2();
         setTimeout(function () {
           getDataAPI2();
         }, 200);
