@@ -288,9 +288,10 @@
         main();
         setTimeout(() => {
           main();
-        });
+        }, 2000);
       });
   }
+  getDataAPI2();
   // hàm lấy id sản phẩm muốn render ra
   function getIdProduct() {
     const queryParams = new URLSearchParams(window.location.search);
@@ -430,7 +431,7 @@
         deleteProduct(".cart-remove");
         deleteProduct(".mobile-cart-remove");
         totalMoneyProduct();
-        getDataAPI2();
+        // getDataAPI2();
         saveBuyNow();
       });
   }
