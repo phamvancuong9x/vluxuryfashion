@@ -412,6 +412,23 @@
     priceProduct.textContent = product.price_product;
     return productElm;
   }
+
+  // fix lỗi ko chạy trên safari ios
+
+  Function.prototype.bind = function (parent) {
+    var f = this;
+    var args = [];
+
+    for (var a = 1; a < arguments.length; a++) {
+      args[args.length] = arguments[a];
+    }
+
+    var temp = function () {
+      return f.apply(parent, args);
+    };
+
+    return temp;
+  };
   // ham fetch Api lay du lieu và render ra thông tin chi tiết sản phảm
   function getDataAPI() {
     const idProduct = getIdProduct();
@@ -428,12 +445,18 @@
         deleteProduct(".cart-remove");
         deleteProduct(".mobile-cart-remove");
         totalMoneyProduct();
-        setTimeout(() => {
-          getDataAPI2();
-        }, 200);
-        setTimeout(() => {
-          main();
-        }, 500);
+        setTimeout(
+          function () {
+            getDataAPI2();
+          }.bind(this),
+          200
+        );
+        setTimeout(
+          function () {
+            main();
+          }.bind(this),
+          500
+        );
         saveBuyNow();
       });
   }
