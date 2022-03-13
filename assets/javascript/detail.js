@@ -8,11 +8,12 @@
         "rgb(218, 218, 218)"
       );
       $(this).css("borderColor", "#000");
-
-      $(".detailProduct__image-right img").attr(
-        "src",
-        $(this).children().attr("src")
-      );
+      let linkImg = this.firstElementChild.src;
+      document.querySelector(".detailProduct__image-right img").src = linkImg;
+      // $(".detailProduct__image-right img").attr(
+      //   "src",
+      //   $(this).children().attr("src")
+      // );
     });
   };
   // hàm thay đổi border size khi hiển thị sự lựa chọn của người dùng
