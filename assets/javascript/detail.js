@@ -286,6 +286,9 @@
         renderSimilarProductItem(arrayProduct, "similarProduct__list");
         switchToPageDetailProduct();
         main();
+        setTimeout((){
+          main();
+        },2000)
       });
   }
   // hàm lấy id sản phẩm muốn render ra
