@@ -431,7 +431,9 @@
         deleteProduct(".cart-remove");
         deleteProduct(".mobile-cart-remove");
         totalMoneyProduct();
-        getDataAPI2();
+        setTimeout(() => {
+          getDataAPI2();
+        }, 500);
         saveBuyNow();
       });
   }
