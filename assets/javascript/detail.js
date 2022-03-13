@@ -1,35 +1,35 @@
 {
   // hàm thay đổi hình ảnh hiển thị chi tiết ản phẩm
 
-  const changeImage = function () {
-    const imageLeft = document.querySelectorAll(
-      ".detailProduct__image-left .image"
-    );
-    for (let i = 0; i < imageLeft.length; i++) {
-      imageLeft[i].onclick = function () {
-        for (let j = 0; j < imageLeft.length; j++) {
-          imageLeft[j].style = `border-color :rgb(218, 218, 218)`;
-        }
-        this.style = `border-color :#000`;
-        console.log();
-        let linkImg = this.firstElementChild.src;
-        document.querySelector(".detailProduct__image-right img").src = linkImg;
-      };
-    }
-  };
   // const changeImage = function () {
-  //   $(".detailProduct__image-left .image").click(function () {
-  //     $(".detailProduct__image-left .image").css(
-  //       "borderColor",
-  //       "rgb(218, 218, 218)"
-  //     );
-  //     $(this).css("borderColor", "#000");
-  //     $(".detailProduct__image-right img").attr(
-  //       "src",
-  //       $(this).children().attr("src")
-  //     );
-  //   });
+  //   const imageLeft = document.querySelectorAll(
+  //     ".detailProduct__image-left .image"
+  //   );
+  //   for (let i = 0; i < imageLeft.length; i++) {
+  //     imageLeft[i].onclick = function () {
+  //       for (let j = 0; j < imageLeft.length; j++) {
+  //         imageLeft[j].style = `border-color :rgb(218, 218, 218)`;
+  //       }
+  //       this.style = `border-color :#000`;
+  //       console.log();
+  //       let linkImg = this.firstElementChild.src;
+  //       document.querySelector(".detailProduct__image-right img").src = linkImg;
+  //     };
+  //   }
   // };
+  const changeImage = function () {
+    $(".detailProduct__image-left .image").click(function () {
+      $(".detailProduct__image-left .image").css(
+        "borderColor",
+        "rgb(218, 218, 218)"
+      );
+      $(this).css("borderColor", "#000");
+      $(".detailProduct__image-right img").attr(
+        "src",
+        $(this).children().attr("src")
+      );
+    });
+  };
   // hàm thay đổi border size khi hiển thị sự lựa chọn của người dùng
 
   const changeBorderSize = function () {
@@ -285,13 +285,12 @@
       .then((arrayProduct) => {
         renderSimilarProductItem(arrayProduct, "similarProduct__list");
         switchToPageDetailProduct();
-        main();
+        // main();
         setTimeout(() => {
           main();
-        }, 2000);
+        }, 1000);
       });
   }
-  // getDataAPI2();
   // hàm lấy id sản phẩm muốn render ra
   function getIdProduct() {
     const queryParams = new URLSearchParams(window.location.search);
