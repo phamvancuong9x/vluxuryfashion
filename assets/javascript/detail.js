@@ -7,8 +7,11 @@
     );
     for (let i = 0; i < imageLeft.length; i++) {
       imageLeft[i].onclick = function () {
-        imageLeft.style = `border color :rgb(218, 218, 218)`;
-        this.style = `border color :#000`;
+        for (let j = 0; j < imageLeft.length; j++) {
+          imageLeft[j].style = `border-color :rgb(218, 218, 218)`;
+        }
+        this.style = `border-color :#000`;
+        console.log();
         let linkImg = this.firstElementChild.src;
         document.querySelector(".detailProduct__image-right img").src = linkImg;
       };
