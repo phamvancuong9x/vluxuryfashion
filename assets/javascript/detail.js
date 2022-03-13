@@ -430,10 +430,10 @@
         totalMoneyProduct();
         setTimeout(function () {
           getDataAPI2();
-        }, 200);
+        }, 300);
         setTimeout(function () {
           main();
-        }, 1500);
+        }, 800);
         saveBuyNow();
       });
   }
