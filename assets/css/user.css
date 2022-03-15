@@ -252,4 +252,12 @@ input {
     border-radius: 3px;
     margin-top: 6px;
   }
+  .modal__container {
+    width: 320px;
+  }
+}
+@media (max-width: 360px) {
+  .modal__container {
+    width: 300px;
+  }
 }
