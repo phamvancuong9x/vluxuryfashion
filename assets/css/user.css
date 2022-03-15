@@ -234,7 +234,8 @@ input {
   }
   .btn__save {
     margin: auto;
-    margin-top: 32px;
+    margin-top: 52px;
+    margin-bottom: 12px;
     padding: 12px 40px;
   }
   .dateOfBirth__select {
