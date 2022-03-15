@@ -230,10 +230,26 @@ input {
   }
   .dateOfBirth__title {
     margin-bottom: 12px;
+    margin-top: 8px;
   }
   .btn__save {
     margin: auto;
     margin-top: 32px;
     padding: 12px 40px;
+  }
+  .dateOfBirth__select {
+    display: flex;
+  }
+  #date,
+  #month,
+  #year {
+    flex: 1;
+    width: auto;
+  }
+  #email,
+  #phone {
+    border: 1px solid #333;
+    border-radius: 3px;
+    margin-top: 6px;
   }
 }
