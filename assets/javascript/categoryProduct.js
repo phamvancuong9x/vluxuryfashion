@@ -42,6 +42,9 @@ function getDataAPI() {
   fetch(URL)
     .then((response) => response.json())
     .then((arrayCategoryProduct) => {
+      // bỏ loading
+      $(".loading").addClass("disabled");
+      // render sản phẩm
       renderProductItem(arrayCategoryProduct, "category-products-list");
       switchToPageDetailProduct();
     })

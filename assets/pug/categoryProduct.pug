@@ -9,7 +9,8 @@ block vars
 block breadcrumbs
     +breadcrumbs('ÁO VEST NAM',' Áo Vest nam')
 block content
-    .container 
+    .container
+        
         .collections__header
             .collections__filter 
                 .collections__filter-name
@@ -42,7 +43,10 @@ block content
                 option(value="Giá từ cao tới thấp " data-pricesort="max-min") Giá từ cao tới thấp
                 option(value="Mới nhất") Mới nhất
                 option(value="Cũ nhất") Cũ nhất
-        .collection__content 
+        
+        .collection__content
+            .loading
+                <div class="lds-ripple"><div></div><div></div></div>
             ul.row#category-products-list
             div(aria-label="Page navigation example")
                 ul(class="pagination justify-content-center")
