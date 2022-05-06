@@ -657,7 +657,7 @@
     fetch(`https://api-json-sever.herokuapp.com/api/account/${id_user}`)
       .then((response) => response.json())
       .then((objProductCart) => {
-        if (objProductCart?.cart.length == 0) {
+        if (objProductCart?.cart?.length == 0) {
           localStorage.setItem("cart_product", "[]");
         } else {
           localStorage.setItem("cart_product", `${objProductCart.cart}`);
