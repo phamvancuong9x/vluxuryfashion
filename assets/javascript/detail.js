@@ -511,7 +511,7 @@
     const isSale = false;
     $(".breadcrumbs__linkPage-container span:nth-child(2)").click(function () {
       window.location.assign(
-        getTypeProduct`categoryProduct.html?typeProduct=${typeProduct}&isSale=${isSale}`
+        `categoryProduct.html?typeProduct=${typeProduct}&isSale=${isSale}`
       );
       // window.history.back();
     });
