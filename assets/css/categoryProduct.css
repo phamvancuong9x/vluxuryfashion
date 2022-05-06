@@ -268,7 +268,7 @@ input[type="radio"]:checked:after {
 }
 .lds-ripple div {
   position: absolute;
-  border: 5px solid rgb(41, 24, 24);
+  border: 5px solid rgb(27, 17, 17);
   opacity: 1;
   border-radius: 50%;
   animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
