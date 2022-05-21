@@ -706,6 +706,17 @@ span {
   transform-origin: top left;
   border-radius: 3px;
 }
+.nav__parent-menu::after {
+  width: 100%;
+  height: 10px;
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  background-color: transparent;
+  z-index: 100;
+}
 .nav__parent-menu:hover .nav__sub-menu {
   margin-top: 7px;
 }

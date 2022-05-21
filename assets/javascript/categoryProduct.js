@@ -186,7 +186,7 @@ function getPriceFilter() {
           });
         }
         if (price_number_lte == "null" && price_number_gte == "null") {
-          arrayProducts = arrayCategoryProduct;
+          arrayProducts = [...arrayCategoryProduct];
         }
         if (arrayProducts.length == 0) {
           $(".pagination").css("display", "none");
